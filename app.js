@@ -1049,6 +1049,514 @@ const RAW_QUESTIONS = [
     trend: [200000, 120000, 80000, 60000, 50000, 55000],
     trendYears: [2008, 2011, 2013, 2016, 2020, 2024],
     fallbackInsight: 'A 1TB external hard drive dropped from ₩200,000 in 2008 to ₩50,000 in 2020, then crept up slightly to ₩55,000: 72% cheaper in 16 years — the sharpest price deflation in this game. The 2011 Thailand floods briefly spiked prices before recovery. Cloud storage (Google Drive, Naver MYBOX) now competes directly, meaning the HDD market faces both cost deflation and demand replacement simultaneously.'
+  },
+
+  // ── FOOD (15 more) ──────────────────────────────────────────
+  {
+    id: 'doenjang_jjigae',
+    category: 'food',
+    item: 'Doenjang Jjigae (된장찌개)',
+    context: 'Per person, standard restaurant',
+    pastYear: 1990,
+    trend: [1500, 2000, 3000, 4500, 6000, 7000, 8000, 10000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "Doenjang jjigae rose from ₩1,500 in 1990 to ₩10,000 today: 6.7×. Korea's fermented soybean stew has tracked kimchi jjigae almost identically over 30 years. Fermented soybean paste (doenjang) is increasingly positioned as a premium artisan ingredient. The gap between home-cooked and restaurant versions has widened as kitchen labor costs make even simple soups disproportionately expensive to serve commercially."
+  },
+  {
+    id: 'budae_jjigae',
+    category: 'food',
+    item: 'Budae Jjigae (부대찌개)',
+    context: 'Per person, standard restaurant',
+    pastYear: 1995,
+    trend: [3000, 4000, 5000, 7000, 8000, 10000, 12000],
+    trendYears: [1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "Budae jjigae (army base stew) rose from ₩3,000 in 1995 to ₩12,000 today: 4×. Born from post-Korean War scarcity — mixing surplus US military spam and sausages with kimchi — it became comfort food and then a trendy retro dish. SPAM prices track global pork and packaging costs. Ironically, a dish born from poverty now costs more than a standard Korean stew."
+  },
+  {
+    id: 'gamjatang',
+    category: 'food',
+    item: 'Gamjatang (감자탕)',
+    context: 'Per person, standard restaurant',
+    pastYear: 1995,
+    trend: [4000, 5000, 6000, 8000, 10000, 12000, 15000],
+    trendYears: [1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "Gamjatang (pork spine stew) rose from ₩4,000 in 1995 to ₩15,000 today: 3.75×. The pork spine was once a cheap cut almost given away; rising domestic pork prices transformed it into a semi-premium ingredient. Large pots cooking all day require significant gas. The dish became a late-night staple, which means nighttime surcharges apply at many restaurants, pushing the real price higher."
+  },
+  {
+    id: 'bingsu',
+    category: 'food',
+    item: 'Patbingsu (팥빙수)',
+    context: 'Red bean shaved ice, standard café',
+    pastYear: 1990,
+    trend: [1000, 1500, 2000, 3000, 5000, 8000, 10000, 14000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "Patbingsu rose from ₩1,000 in 1990 to ₩14,000 today: 14× — one of the highest inflation rates in this game. Korea's iconic summer dessert transformed from a simple street snack into a premium visual experience. Premium hotel bingsu (Shilla, Lotte) now exceed ₩50,000. Instagram culture created a luxury tier that pulled even standard café prices up dramatically."
+  },
+  {
+    id: 'hotteok',
+    category: 'food',
+    item: 'Hotteok (호떡)',
+    context: 'One piece, street vendor',
+    pastYear: 1990,
+    trend: [200, 300, 500, 700, 1000, 1500, 2000, 2500],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "Hotteok rose from ₩200 in 1990 to ₩2,500 today: 12.5×. The sweet syrup-filled pancake is one of Korea's most beloved winter street foods. Wheat, sugar, cinnamon, and peanuts all rose in price. Street food vendors can't spread costs across table service — every price hike must be passed directly to the customer. Yet demand remains inelastic because few things warm a cold Korean street as reliably."
+  },
+  {
+    id: 'bungeoppang',
+    category: 'food',
+    item: 'Bungeoppang (붕어빵)',
+    context: 'Three pieces, street vendor',
+    pastYear: 1990,
+    trend: [300, 500, 700, 1000, 1500, 2000, 3000, 5000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "Three bungeoppang rose from ₩300 in 1990 to ₩5,000 today: 16.7×. Red bean prices are volatile and surged in recent years. Once the definitive '5 for ₩1,000' experience, bungeoppang is now a luxury street snack at ₩1,500+ per piece. Vendors who survived COVID shutdowns are pricing to recover. This fish-shaped pastry now has one of the highest nominal inflation multiples of any Korean street food."
+  },
+  {
+    id: 'yukgaejang',
+    category: 'food',
+    item: 'Yukgaejang (육개장)',
+    context: 'One bowl, standard restaurant',
+    pastYear: 1990,
+    trend: [2000, 3000, 4000, 5000, 7000, 8000, 10000, 12000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "Yukgaejang (spicy beef soup) rose from ₩2,000 in 1990 to ₩12,000 today: 6×. The dish requires beef brisket, fernbrake (고사리), and green onion — all of which tracked agricultural inflation. It is one of the four ceremonial soups eaten at Korean memorials and funerals, meaning demand stays culturally constant regardless of price. Ceremonial foods rarely go out of fashion."
+  },
+  {
+    id: 'pork_ribs',
+    category: 'food',
+    item: 'Pork Ribs (돼지갈비)',
+    context: '200g per person, standard restaurant',
+    pastYear: 1995,
+    trend: [5000, 7000, 9000, 11000, 13000, 15000, 18000, 22000],
+    trendYears: [1995, 2000, 2005, 2009, 2013, 2017, 2021, 2024],
+    fallbackInsight: "Pork ribs rose from ₩5,000 per person in 1995 to ₩22,000 today: 4.4×. Marinated galbi has long been a celebration dish in Korea. Rib supply is limited — there are only so many ribs per pig — so prices track both overall pork costs and premium cut scarcity. The dish is ordered for birthdays and gatherings, meaning price sensitivity is lower than for everyday meals. Special occasions absorb special prices."
+  },
+  {
+    id: 'beef_ribs',
+    category: 'food',
+    item: 'Beef Short Ribs (소갈비)',
+    context: '200g per person, Korean BBQ restaurant',
+    pastYear: 1995,
+    trend: [10000, 15000, 20000, 25000, 30000, 40000, 50000, 65000],
+    trendYears: [1995, 2000, 2005, 2009, 2013, 2017, 2021, 2024],
+    fallbackInsight: "Beef short ribs (소갈비) rose from ₩10,000 per person in 1995 to ₩65,000 today: 6.5×. Hanwoo (Korean domestic beef) commands extreme premiums: a single prize cow can sell for ₩5,000,000+. The 'Hanwoo premium' grew as middle-class incomes rose and beef became a status symbol. A full galbi dinner for four now easily exceeds ₩300,000. It is arguably Korea's most dramatic food inflation story."
+  },
+  {
+    id: 'soft_serve',
+    category: 'food',
+    item: 'Soft Serve Ice Cream (소프트아이스크림)',
+    context: "McDonald's or Lotteria Korea, small cone",
+    pastYear: 1990,
+    trend: [200, 300, 400, 500, 600, 700, 800, 1000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "Fast food soft serve rose from ₩200 in 1990 to ₩1,000 today: 5×. For decades it was the ultimate cheap treat — the one thing you could get at McDonald's for pocket change. McDonald's Korea held the price at ₩500 for years before gradually raising it. The soft serve cone is a loss-leader: chains deliberately suppress its price while raising everything else around it to attract foot traffic."
+  },
+  {
+    id: 'baskin_robbins',
+    category: 'food',
+    item: 'Baskin-Robbins Scoop (배스킨라빈스)',
+    context: 'One regular scoop in a cup/cone',
+    pastYear: 1994,
+    trend: [700, 1000, 1500, 2000, 2500, 3000, 3500, 4500],
+    trendYears: [1994, 1998, 2002, 2006, 2010, 2014, 2019, 2024],
+    fallbackInsight: "Baskin-Robbins single scoop rose from ₩700 in 1994 to ₩4,500 today: 6.4×. Entering Korea in 1985, it became synonymous with birthday cakes and childhood treats. Dairy, sugar, and flavor ingredient costs all rose. The iconic 'pink spoon' now costs as much as a convenience store sandwich. The brand's '31호' stores became such a cultural institution that price hikes generate genuine national controversy."
+  },
+  {
+    id: 'cup_tteokbokki',
+    category: 'food',
+    item: 'Cup Tteokbokki (컵떡볶이)',
+    context: 'Convenience store, ready-to-eat cup',
+    pastYear: 2005,
+    trend: [1000, 1200, 1500, 1800, 2000, 2500],
+    trendYears: [2005, 2008, 2011, 2015, 2019, 2024],
+    fallbackInsight: "Convenience store cup tteokbokki rose from ₩1,000 in 2005 to ₩2,500 today: 2.5×. The format was pioneered by GS25 and became Korea's best-selling convenience snack. Automated production kept price increases modest. But since 2022, rice cake and gochujang ingredient costs caught up. Still, at ₩2,500 it remains one of the cheapest hot snacks available anywhere in Korea."
+  },
+  {
+    id: 'energy_drink',
+    category: 'food',
+    item: 'Energy Drink (레드불 250ml)',
+    context: 'Convenience store, standard can',
+    pastYear: 2005,
+    trend: [2000, 2200, 2500, 3000, 3500, 4000],
+    trendYears: [2005, 2008, 2011, 2015, 2019, 2024],
+    fallbackInsight: "Red Bull rose from ₩2,000 in 2005 to ₩4,000 today: 2×. Energy drinks are a premium category competing on brand, not cost. The aluminum can, taurine, caffeine, and B vitamins are not expensive to produce, but the brand commands extraordinary margins. Domestic Korean brands (Hot6, Bacchus) undercut significantly. The rise of convenience store culture made energy drinks a ₩4,000 daily ritual for millions of Korean students and workers."
+  },
+  {
+    id: 'yakult',
+    category: 'food',
+    item: 'Yakult (야쿠르트)',
+    context: 'One 65ml bottle',
+    pastYear: 1990,
+    trend: [50, 80, 100, 120, 150, 180, 200, 250],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "Yakult rose from ₩50/bottle in 1990 to ₩250 today: 5×. Korea's iconic probiotic drink, delivered by the legendary 'yakult ladies' (야쿠르트 아줌마) on electric trikes, is one of the most recognized brands in the country. The company deliberately kept prices low for decades. The direct-to-doorstep delivery model — without retail markup — is a unique cost structure that helped hold prices down relative to comparable products."
+  },
+  {
+    id: 'juk',
+    category: 'food',
+    item: 'Restaurant Porridge (죽)',
+    context: 'One bowl, Bonjuk (본죽) or similar franchise',
+    pastYear: 2002,
+    trend: [4000, 5000, 6000, 7000, 8000, 10000, 12000],
+    trendYears: [2002, 2005, 2008, 2012, 2016, 2020, 2024],
+    fallbackInsight: "Restaurant porridge rose from ₩4,000 in 2002 to ₩12,000 today: 3×. Bonjuk franchised the category in 2002, repositioning juk from sick-person food to a premium health lunch. The abalone juk that gave the brand its reputation now exceeds ₩15,000. Ingredients like abalone and premium grains all rose. Juk is now a mainstream healthy office lunch — a positioning that fully justifies the price."
+  },
+
+  // ── TRANSPORT (10 more) ──────────────────────────────────────
+  {
+    id: 'arex',
+    category: 'transport',
+    item: 'AREX Airport Express (직통)',
+    context: 'Seoul Station to Incheon Airport T1, direct train',
+    pastYear: 2010,
+    trend: [13300, 14800, 14800, 14800, 16500],
+    trendYears: [2010, 2014, 2017, 2020, 2024],
+    fallbackInsight: "AREX direct express launched in 2010 at ₩13,300 and is ₩16,500 today: a 24% rise in 14 years. For an airport rail link, this is remarkably stable — AREX is partly government-owned and uses public pricing logic. The all-stop commuter train on the same track costs ₩4,500 to the airport, so the express premium versus the slow train has widened considerably over time."
+  },
+  {
+    id: 'busan_subway',
+    category: 'transport',
+    item: 'Busan Subway Base Fare',
+    context: 'Standard adult ticket, Busan Metro',
+    pastYear: 1985,
+    trend: [200, 350, 500, 700, 900, 1300, 1400, 1550],
+    trendYears: [1985, 1991, 1996, 2001, 2005, 2014, 2019, 2024],
+    fallbackInsight: "Busan subway fares rose from ₩200 in 1985 to ₩1,550 today: 7.75×. Korea's second city opened its metro in 1985 and has followed Seoul's trajectory closely. Like Seoul's subway, Busan's runs at operating deficits covered by city taxes. The real cost of a Busan subway ride is significantly higher than ₩1,550; riders are heavily subsidized by public funds."
+  },
+  {
+    id: 'jeju_rent_car',
+    category: 'transport',
+    item: 'Jeju Island Rental Car',
+    context: 'Compact car, one day (excluding insurance)',
+    pastYear: 2000,
+    trend: [30000, 35000, 40000, 45000, 50000, 70000, 130000, 80000],
+    trendYears: [2000, 2004, 2008, 2012, 2016, 2020, 2022, 2024],
+    fallbackInsight: "Jeju rental cars rose from ₩30,000/day in 2000 to around ₩80,000 today — but hit ₩130,000+ during 2020–2022 when COVID closed international travel and Koreans flooded Jeju. The market normalized as travel reopened. Jeju's unique geography — no reliable public transit — means virtually every visitor needs a car, giving rental companies unusual and enduring pricing power."
+  },
+  {
+    id: 'oil_change',
+    category: 'transport',
+    item: 'Engine Oil Change (엔진오일 교환)',
+    context: 'Standard oil + filter, mid-size sedan',
+    pastYear: 1995,
+    trend: [20000, 25000, 30000, 35000, 40000, 50000, 60000, 70000],
+    trendYears: [1995, 2000, 2005, 2009, 2013, 2017, 2021, 2024],
+    fallbackInsight: "Engine oil changes rose from ₩20,000 in 1995 to ₩70,000 today: 3.5×. Oil and filters are commodities, but labor and garage rent are not. The shift to 10,000km-interval changes reduced visit frequency, pushing shops to charge more per visit. Synthetic oil upgrades have normalized ₩100,000+ changes for premium cars. Basic maintenance now costs real money."
+  },
+  {
+    id: 'electric_scooter',
+    category: 'transport',
+    item: 'Shared E-Scooter (공유 킥보드)',
+    context: 'Per 30 minutes, major sharing service',
+    pastYear: 2019,
+    trend: [1000, 2000, 3000, 4000],
+    trendYears: [2019, 2021, 2023, 2024],
+    fallbackInsight: "Shared e-scooters launched in Korea around 2019 at roughly ₩1,000 for 30 minutes and have risen to ₩4,000: 4× in 5 years. Initial prices were intentionally low to build adoption. As regulations tightened (helmets required, sidewalk bans), operating costs rose sharply. Battery replacement, maintenance, and parking enforcement all add up. The 'cheap last-mile' promise of 2019 has already faded."
+  },
+  {
+    id: 'intercity_bus',
+    category: 'transport',
+    item: 'Intercity Bus Seoul–Cheonan',
+    context: 'Standard seat, one way (시외버스)',
+    pastYear: 1990,
+    trend: [1500, 2500, 3500, 5000, 7000, 8500, 9000, 11000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "Seoul–Cheonan intercity bus rose from ₩1,500 in 1990 to ₩11,000 today: 7.3×. Short intercity routes were once the cheapest intercity travel. Rising fuel, driver wages, and terminal costs changed that. KTX SRT now connects Seoul and Cheonan in 30 minutes for a similar fare — undercutting the bus on both price and speed. The intercity bus for short distances is under serious competitive pressure."
+  },
+  {
+    id: 'ferry_jeju',
+    category: 'transport',
+    item: 'Mokpo–Jeju Ferry',
+    context: 'Standard class seat, one way',
+    pastYear: 1995,
+    trend: [15000, 20000, 25000, 32000, 40000, 50000, 55000, 65000],
+    trendYears: [1995, 2000, 2005, 2009, 2013, 2017, 2021, 2024],
+    fallbackInsight: "The Mokpo–Jeju ferry rose from ₩15,000 in 1995 to ₩65,000 today: 4.3×. The Sewol tragedy in 2014 led to sweeping safety regulations that increased operating costs for all Korean ferries. Budget airlines now make the 13-hour ferry journey impractical for most travelers, but the ferry remains essential for cargo and those who cannot fly."
+  },
+  {
+    id: 'ev_charging',
+    category: 'transport',
+    item: 'EV Fast Charging (전기차 급속충전)',
+    context: 'Public charger, approx. 30 minutes',
+    pastYear: 2015,
+    trend: [2000, 5000, 8000, 12000, 18000],
+    trendYears: [2015, 2018, 2020, 2022, 2024],
+    fallbackInsight: "Public EV fast charging rose from roughly ₩2,000 for 30 minutes in 2015 to ₩18,000 today: 9× in 9 years. Early infrastructure was heavily subsidized to encourage EV adoption. As subsidies were withdrawn and electricity prices rose, charging costs surged. The math for EV ownership is now less obvious than in 2018: the cost gap with gasoline has narrowed significantly for high-mileage drivers."
+  },
+  {
+    id: 'motorcycle',
+    category: 'transport',
+    item: 'Motorcycle 125cc (오토바이)',
+    context: 'Standard commuter scooter, new retail price',
+    pastYear: 1990,
+    trend: [700000, 900000, 1100000, 1300000, 1500000, 1700000, 2000000, 2500000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "A 125cc commuter motorcycle rose from ₩700,000 in 1990 to ₩2,500,000 today: 3.6×. Motorcycles became the backbone of Korea's delivery economy. Post-COVID delivery demand surged, increasing used motorcycle prices dramatically. The cheapest new scooter now costs more than a decent used car did 20 years ago. Delivery platforms effectively drove up the purchase price of the bikes their workers depend on."
+  },
+  {
+    id: 'driver_license',
+    category: 'transport',
+    item: "Driver's License Academy (운전학원)",
+    context: 'Full course, Type 1 license (1종 보통)',
+    pastYear: 1995,
+    trend: [200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000],
+    trendYears: [1995, 2000, 2005, 2009, 2013, 2017, 2021, 2024],
+    fallbackInsight: "Driver's license academy fees rose from ₩200,000 in 1995 to ₩900,000 today: 4.5×. A license is a practical necessity in Korea. Academies charge for instructor time, fuel, vehicle maintenance, and facility rent — all labor and real estate intensive. The government tried to introduce private self-study exams to reduce costs, but the dominant academy model has kept prices rising steadily."
+  },
+
+  // ── CULTURE (15 more) ────────────────────────────────────────
+  {
+    id: 'ski_resort',
+    category: 'culture',
+    item: 'Ski Resort Day Pass (스키장 리프트권)',
+    context: 'All-day lift ticket, standard domestic resort',
+    pastYear: 1995,
+    trend: [20000, 30000, 40000, 50000, 60000, 70000, 80000, 100000],
+    trendYears: [1995, 2000, 2005, 2009, 2013, 2017, 2021, 2024],
+    fallbackInsight: "Ski resort day passes rose from ₩20,000 in 1995 to ₩100,000 today: 5×. Korean ski culture peaked in the 2000s and has slowly declined as warming winters shorten seasons. Yet prices keep rising — fewer skiers means resorts must extract more per visitor to cover fixed costs. Ski equipment rentals, lessons, and food can push a day trip well over ₩200,000."
+  },
+  {
+    id: 'imax_ticket',
+    category: 'culture',
+    item: 'IMAX Movie Ticket',
+    context: 'CGV IMAX, standard weekend screening',
+    pastYear: 2010,
+    trend: [14000, 16000, 18000, 20000, 22000, 25000],
+    trendYears: [2010, 2013, 2016, 2018, 2021, 2024],
+    fallbackInsight: "IMAX tickets rose from ₩14,000 in 2010 to ₩25,000 today: 1.8× in 14 years. CGV introduced IMAX to Korea in 2010 and quickly expanded. Marvel and blockbuster releases sell out IMAX within hours, meaning price-insensitive demand lets theaters charge significantly more. IMAX has become a nearly separate product category — people buy it specifically, not just 'a movie ticket.'"
+  },
+  {
+    id: 'camping',
+    category: 'culture',
+    item: 'National Park Campsite (캠핑장)',
+    context: 'One night, standard site',
+    pastYear: 2000,
+    trend: [3000, 5000, 6000, 7000, 10000, 14000, 18000],
+    trendYears: [2000, 2004, 2008, 2012, 2016, 2020, 2024],
+    fallbackInsight: "National park campsites rose from ₩3,000/night in 2000 to ₩18,000 today: 6×. The COVID-era camping boom pushed demand to record highs, and the forest service raised prices to manage overcrowding. Domestic camping gear spending exploded, making Korea one of the world's fastest-growing outdoor markets. What was once a budget family activity now requires advance reservations weeks out and a significant gear investment."
+  },
+  {
+    id: 'pilates',
+    category: 'culture',
+    item: 'Pilates Group Class (필라테스)',
+    context: 'Per group session (6–8 people), standard studio',
+    pastYear: 2010,
+    trend: [20000, 25000, 30000, 35000, 40000, 50000],
+    trendYears: [2010, 2013, 2016, 2018, 2021, 2024],
+    fallbackInsight: "Pilates group classes rose from ₩20,000 in 2010 to ₩50,000 today: 2.5× in 14 years. The format exploded in Korea in the 2010s, driven by celebrity endorsements and social media. Instructor certification costs are substantial, and prime Gangnam studio locations demand high rent. Private 1-on-1 sessions now exceed ₩100,000. Pilates has become one of the most expensive routine wellness habits in urban Korea."
+  },
+  {
+    id: 'pet_grooming',
+    category: 'culture',
+    item: 'Dog Grooming (반려견 미용)',
+    context: 'Small dog, full wash + trim, standard pet salon',
+    pastYear: 2000,
+    trend: [15000, 20000, 25000, 30000, 35000, 45000, 55000, 70000],
+    trendYears: [2000, 2004, 2008, 2012, 2016, 2019, 2022, 2024],
+    fallbackInsight: "Dog grooming rose from ₩15,000 in 2000 to ₩70,000 today: 4.7×. Korea's pet population exceeds 10 million and spending per pet rivals developed Western markets. Groomers are now skilled certified labor. As pet ownership replaced child-rearing for many younger Koreans, spending per animal increased dramatically. Pets became family members and are priced accordingly."
+  },
+  {
+    id: 'webtoon_platform',
+    category: 'culture',
+    item: 'Webtoon Platform Subscription (웹툰 플랫폼)',
+    context: 'Monthly pass, KakaoPage or Naver Webtoon',
+    pastYear: 2012,
+    trend: [5000, 7000, 9000, 10000, 12000],
+    trendYears: [2012, 2015, 2018, 2020, 2024],
+    fallbackInsight: "Webtoon platform subscriptions rose from ₩5,000/month in 2012 to ₩12,000 today: 2.4×. Korean webtoons conquered global digital content: KakaoPage and Naver Webtoon now operate in dozens of countries. Content licensing fees and creator payouts rose as the industry scaled. The same platform that charged ₩5,000 in 2012 now hosts content generating billions of dollars in global IP licensing — readers pay more and get richer content."
+  },
+  {
+    id: 'classical_concert',
+    category: 'culture',
+    item: 'Classical Concert (클래식 공연)',
+    context: 'R-seat, Seoul Arts Center (예술의전당)',
+    pastYear: 1995,
+    trend: [20000, 30000, 40000, 50000, 70000, 90000, 110000, 130000],
+    trendYears: [1995, 2000, 2005, 2009, 2013, 2017, 2021, 2024],
+    fallbackInsight: "Classical concert R-seats at the Seoul Arts Center rose from ₩20,000 in 1995 to ₩130,000 today: 6.5×. International performers demand fees in euros and dollars, making exchange rates a key variable. The Korean classical music scene has grown dramatically with world-renowned Korean soloists. Premium seats for blockbuster programs now exceed ₩200,000."
+  },
+  {
+    id: 'comic_book',
+    category: 'culture',
+    item: 'Comic/Manga Book (만화책)',
+    context: 'Single volume, standard format',
+    pastYear: 1990,
+    trend: [800, 1200, 1500, 2000, 3000, 4000, 5000, 7000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "Comic books rose from ₩800 in 1990 to ₩7,000 today: 8.75×. Paper and printing costs drove physical prices up just as digital alternatives (webtoons, scanlations) eroded demand. The physical manga market in Korea shrank dramatically in the 2010s, leaving only dedicated fans buying printed volumes. Publishers raised per-unit prices to compensate for lower print runs — a classic low-volume premium loop."
+  },
+  {
+    id: 'music_streaming',
+    category: 'culture',
+    item: 'Music Streaming (멜론 월정액)',
+    context: 'Monthly unlimited streaming, Melon or equivalent',
+    pastYear: 2004,
+    trend: [4000, 6000, 7000, 7700, 7900, 8900, 10900],
+    trendYears: [2004, 2008, 2012, 2015, 2017, 2021, 2024],
+    fallbackInsight: "Music streaming (led by Melon) rose from ₩4,000/month in 2004 to ₩10,900 today: 2.7×. Korea was one of the earliest markets to adopt paid streaming globally. Rising royalty rates — pushed by artist advocacy and government reform — drove prices up. K-pop's global explosion made Korean music catalog rights far more valuable than they were 20 years ago."
+  },
+  {
+    id: 'taekwondo',
+    category: 'culture',
+    item: 'Taekwondo Academy (태권도 학원)',
+    context: "Children's monthly tuition",
+    pastYear: 1990,
+    trend: [20000, 30000, 40000, 50000, 60000, 70000, 80000, 100000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "Children's taekwondo rose from ₩20,000/month in 1990 to ₩100,000 today: 5×. Taekwondo is part of Korean childhood in a way few other activities are — nearly every neighborhood has a dojang. Monthly fees track instructor wages and real estate almost directly. The 2000 Sydney Olympics (Korea won gold) boosted enrollment, and the global spread of taekwondo as an Olympic sport gave Korean instructors global career options, raising the domestic wage floor."
+  },
+  {
+    id: 'english_academy',
+    category: 'culture',
+    item: 'English Academy (영어학원)',
+    context: "Children's monthly tuition, elementary level",
+    pastYear: 1995,
+    trend: [60000, 100000, 150000, 200000, 250000, 300000, 350000, 400000],
+    trendYears: [1995, 2000, 2005, 2009, 2013, 2017, 2021, 2024],
+    fallbackInsight: "English academy (hagwon) monthly fees rose from ₩60,000 in 1995 to ₩400,000 today: 6.7×. The Korean private education market is one of the largest in the world relative to GDP. Competition for university entrance drives parents to spend regardless of cost. Native-speaking foreign instructors command significant premiums. Total private education spending per Korean child rivals tuition at many Western universities."
+  },
+  {
+    id: 'nailshop',
+    category: 'culture',
+    item: 'Nail Salon — Gel Nails (네일샵)',
+    context: 'Full hand gel nail set, standard salon',
+    pastYear: 2005,
+    trend: [20000, 25000, 30000, 35000, 40000, 50000],
+    trendYears: [2005, 2009, 2013, 2016, 2020, 2024],
+    fallbackInsight: "Gel nail services rose from ₩20,000 in 2005 to ₩50,000 today: 2.5×. Korea has one of the highest nail salon densities in the world; nail art is mainstream professional grooming. Product costs (gel, UV lamps, removal chemicals) rose, but the bigger driver is professionalization: certified nail artists now command higher wages. Instagram-driven design complexity also pushed average session times — and prices — significantly higher."
+  },
+  {
+    id: 'batting_cage',
+    category: 'culture',
+    item: 'Baseball Batting Cage (배팅연습장)',
+    context: 'Standard time slot, urban facility',
+    pastYear: 1995,
+    trend: [2000, 3000, 4000, 5000, 6000, 7000, 8000],
+    trendYears: [1995, 2000, 2005, 2010, 2015, 2019, 2024],
+    fallbackInsight: "Baseball batting cages rose from ₩2,000 in 1995 to ₩8,000 today: 4×. KBO baseball has seen surging popularity — the 2024 season set attendance records. Machine maintenance, facility rent, and net replacement costs all rise with Seoul real estate. The 2023–2024 baseball boom may push prices higher still as operators invest in premium experiences to capture demand."
+  },
+  {
+    id: 'kids_cafe',
+    category: 'culture',
+    item: "Kids Café (키즈카페)",
+    context: 'Per child, 1-hour entry',
+    pastYear: 2005,
+    trend: [5000, 7000, 10000, 12000, 15000, 18000],
+    trendYears: [2005, 2009, 2013, 2016, 2020, 2024],
+    fallbackInsight: "Kids café entry rose from ₩5,000 in 2005 to ₩18,000 today: 3.6×. Indoor play cafés became essential for Korean parents in apartment-heavy cities with limited outdoor space. Play equipment, safety padding, and cleaning staff are significant costs. The category was devastated by COVID lockdowns; operators who survived raised prices to recover. A family trip to a kids café, including adult coffee, now easily costs ₩50,000+."
+  },
+  {
+    id: 'wedding_photo',
+    category: 'culture',
+    item: 'Wedding Studio Photo (웨딩 스튜디오)',
+    context: 'Basic package, standard studio',
+    pastYear: 1995,
+    trend: [300000, 400000, 500000, 600000, 700000, 800000, 1000000, 1200000],
+    trendYears: [1995, 2000, 2005, 2009, 2013, 2017, 2021, 2024],
+    fallbackInsight: "Wedding studio photography rose from ₩300,000 in 1995 to ₩1,200,000 today: 4×. Korean wedding culture demands elaborate pre-ceremony photo shoots — a unique tradition that grew into a large industry. Premium packages with multiple outfits, outdoor locations, and retouching now exceed ₩5,000,000. Declining marriage rates mean fewer clients, so studios raise prices per booking — another declining-industry pricing spiral."
+  },
+
+  // ── TECH (10 more) ──────────────────────────────────────────
+  {
+    id: 'bluetooth_speaker',
+    category: 'tech',
+    item: 'Bluetooth Speaker (블루투스 스피커)',
+    context: 'Mid-range portable speaker',
+    pastYear: 2012,
+    trend: [100000, 80000, 60000, 60000, 70000, 80000],
+    trendYears: [2012, 2015, 2017, 2019, 2022, 2024],
+    fallbackInsight: "Mid-range Bluetooth speakers dropped from ₩100,000 in 2012 to ₩60,000 by 2017, then recovered to ₩80,000: a net 20% decrease. Chinese manufacturers commoditized the category rapidly. Post-COVID supply chain disruptions pushed prices back up. Decent audio quality is now achievable at ₩30,000–50,000 — the ₩100,000 tier now competes with true premium brands (Bose, B&O) rather than the mid-market."
+  },
+  {
+    id: 'monitor_27',
+    category: 'tech',
+    item: '27-inch FHD Monitor (모니터)',
+    context: 'Standard 1080p office/gaming monitor',
+    pastYear: 2010,
+    trend: [400000, 300000, 200000, 150000, 150000, 180000, 200000],
+    trendYears: [2010, 2013, 2016, 2018, 2020, 2022, 2024],
+    fallbackInsight: "A 27-inch FHD monitor dropped from ₩400,000 in 2010 to ₩150,000 by 2018: a 62% fall. Then COVID-driven demand and chip shortages pushed it back to ₩200,000. The ₩150,000 monitor of 2018 was more capable than the ₩400,000 of 2010 — response time, contrast, and viewing angles all improved dramatically while the price fell. This is technology deflation briefly interrupted by supply shock."
+  },
+  {
+    id: 'cordless_vacuum',
+    category: 'tech',
+    item: 'Cordless Vacuum (무선 청소기)',
+    context: 'Mid-range stick vacuum, major brand',
+    pastYear: 2010,
+    trend: [300000, 250000, 200000, 200000, 250000, 300000],
+    trendYears: [2010, 2013, 2016, 2018, 2021, 2024],
+    fallbackInsight: "Cordless vacuums stayed broadly flat at ₩200,000–300,000 since 2010. Dyson entered Korea and defined a ₩700,000–1,000,000 premium tier; LG and Samsung competed hard at ₩200,000–400,000 to protect market share. The total category grew dramatically as apartment living made cordless cleaning a practical necessity. Dyson's entry essentially split the vacuum market into two price worlds with a wide gap between them."
+  },
+  {
+    id: 'electric_toothbrush',
+    category: 'tech',
+    item: 'Electric Toothbrush (전동칫솔)',
+    context: 'Mid-range oscillating type, Oral-B or Philips',
+    pastYear: 2005,
+    trend: [80000, 70000, 60000, 60000, 70000, 80000],
+    trendYears: [2005, 2009, 2013, 2017, 2020, 2024],
+    fallbackInsight: "Electric toothbrushes have stayed remarkably flat at ₩60,000–80,000 since 2005. The replacement head model means the base unit is a near-loss-leader: ₩30,000–50,000 per set of four heads per year is where profit lies. Korean dentist recommendations and growing oral health awareness expanded the user base, but intense Oral-B vs. Philips competition held hardware prices stable."
+  },
+  {
+    id: 'game_subscription',
+    category: 'tech',
+    item: 'Game Subscription Service (게임 구독)',
+    context: 'Monthly, Xbox Game Pass or PlayStation Plus',
+    pastYear: 2015,
+    trend: [4900, 6900, 9900, 12900, 17000],
+    trendYears: [2015, 2018, 2020, 2022, 2024],
+    fallbackInsight: "Game subscription services rose from ₩4,900/month in 2015 to ₩17,000 today: 3.5× in 9 years. Microsoft and Sony restructured gaming from ownership to access, then raised prices once habits were established. The ₩17,000 fee covers hundreds of games — per-game cost plummeted even as the subscription price rose. Still, the 2022–2023 price hikes drew significant backlash from Korean gamers accustomed to low local pricing."
+  },
+  {
+    id: 'dashcam',
+    category: 'tech',
+    item: 'Dashcam (블랙박스)',
+    context: '2-channel (front + rear), standard model',
+    pastYear: 2010,
+    trend: [200000, 150000, 120000, 100000, 80000, 90000, 100000],
+    trendYears: [2010, 2012, 2015, 2017, 2019, 2022, 2024],
+    fallbackInsight: "Dashcams dropped from ₩200,000 in 2010 to ₩80,000 by 2019, then crept back to ₩100,000: a net 50% decrease. Korea has the world's highest dashcam adoption rate — essentially considered mandatory for insurance disputes. Chinese components commoditized the hardware rapidly. The brief price rebound reflects feature upgrades (4K, parking mode, cloud) rather than component cost increases. A niche accessory became essential car equipment."
+  },
+  {
+    id: 'rice_cooker',
+    category: 'tech',
+    item: 'Electric Rice Cooker (전기밥솥)',
+    context: '6-person IH pressure cooker, Cuckoo brand',
+    pastYear: 1995,
+    trend: [100000, 120000, 150000, 180000, 200000, 220000, 250000, 280000],
+    trendYears: [1995, 2000, 2005, 2009, 2013, 2017, 2021, 2024],
+    fallbackInsight: "Korean rice cookers rose from ₩100,000 in 1995 to ₩280,000 today: 2.8×. Cuckoo and Cuchen dominate a market unique to Korea — pressure IH rice cookers that cost 5–10× their Japanese equivalents but produce noticeably better results. Koreans consider this technology non-negotiable for proper rice texture. Premium models now exceed ₩500,000 and are gifted at weddings as luxury appliances."
+  },
+  {
+    id: 'wifi_router',
+    category: 'tech',
+    item: 'Wi-Fi Router (공유기)',
+    context: 'Mid-range home router, TP-Link or IPTIME',
+    pastYear: 2005,
+    trend: [100000, 80000, 60000, 50000, 60000, 70000, 80000],
+    trendYears: [2005, 2009, 2012, 2016, 2019, 2022, 2024],
+    fallbackInsight: "Home Wi-Fi routers dropped from ₩100,000 in 2005 to ₩50,000 by 2016, then recovered to ₩80,000. Korean brand IPTIME captured the mass market with aggressive pricing, while TP-Link and ASUS competed in the premium segment. The recovery reflects the shift to Wi-Fi 6 routers and chip cost increases. With Korea having the world's fastest home internet, router upgrades to support gigabit speeds have become a regular household expense."
+  },
+  {
+    id: 'security_camera',
+    category: 'tech',
+    item: 'Home CCTV Camera (가정용 CCTV)',
+    context: 'Single IP camera, standard brand',
+    pastYear: 2010,
+    trend: [200000, 150000, 100000, 70000, 60000, 60000, 70000],
+    trendYears: [2010, 2013, 2016, 2018, 2020, 2022, 2024],
+    fallbackInsight: "Home CCTV cameras dropped from ₩200,000 in 2010 to ₩60,000 by 2020: a 70% fall. Chinese manufacturers drove costs to the floor. Post-COVID supply chain issues caused a minor rebound. From a niche professional product to an ordinary household item within a decade. Concerns about stalking and domestic violence have simultaneously made cameras both more popular and more controversial in Korean homes."
+  },
+  {
+    id: 'electric_kettle',
+    category: 'tech',
+    item: 'Electric Kettle (전기포트)',
+    context: 'Standard 1.7L home kettle',
+    pastYear: 2000,
+    trend: [20000, 20000, 20000, 25000, 30000, 35000, 40000],
+    trendYears: [2000, 2004, 2008, 2012, 2016, 2020, 2024],
+    fallbackInsight: "Electric kettles rose from ₩20,000 in 2000 to ₩40,000 today: 2×. One of the slowest-rising items in this game. The basic function (boil water) has not changed; manufacturing moved to China early; domestic brands competed fiercely with imports. The market split between ₩15,000 budget kettles and ₩80,000+ designer models (Smeg, Fellow). The middle of the market, where most Koreans shop, has barely moved in 20 years."
   }
 ];
 
@@ -1292,10 +1800,21 @@ function initStartScreen() {
   // Stats button
   document.getElementById('stats-btn').addEventListener('click', showStatsScreen);
 
+  // API key toggle
+  const apiToggle  = document.getElementById('api-key-toggle');
+  const apiSection = document.getElementById('api-key-section');
+  apiToggle.addEventListener('click', () => {
+    const open = apiSection.hidden;
+    apiSection.hidden = !open;
+    apiToggle.textContent = open ? '▼ Enable explanations (Optional)' : '▶ Enable explanations (Optional)';
+  });
+
   // Restore saved API key for this session
   const saved = sessionStorage.getItem('priceMemoryApiKey');
   if (saved) {
     document.getElementById('api-key-input').value = saved;
+    apiSection.hidden = false;
+    apiToggle.textContent = '▼ Enable explanations (Optional)';
   }
 
   // Category filter buttons

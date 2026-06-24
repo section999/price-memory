@@ -33,21 +33,25 @@
           <button class="filter-btn" data-category="tech">Tech</button>
         </div>
 
-        <!-- API key input -->
-        <div class="section-label">Anthropic API Key <span class="label-optional">(optional, enables AI explanations)</span></div>
-        <input
-          id="api-key-input"
-          type="password"
-          class="text-input"
-          placeholder="sk-ant-..."
-          autocomplete="off"
-          spellcheck="false"
-        />
-        <p class="input-hint">Stored in sessionStorage only. Never sent anywhere except api.anthropic.com.</p>
-
         <!-- Start button -->
-        <button id="start-btn" class="btn btn-primary btn-large">Start Game →</button>
-        <button id="stats-btn" class="btn btn-ghost btn-large">View Stats →</button>
+        <div class="btn-row">
+          <button id="start-btn" class="btn btn-primary btn-large">Start Game</button>
+          <button id="stats-btn" class="btn btn-ghost btn-large">View Stats</button>
+        </div>
+
+        <!-- API key input (collapsible) -->
+        <button id="api-key-toggle" class="api-key-toggle">▶ Enable explanations (Optional)</button>
+        <div id="api-key-section" class="api-key-section" hidden>
+          <input
+            id="api-key-input"
+            type="password"
+            class="text-input"
+            placeholder="Enter Anthropic API Key"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <p class="input-hint">Stored in sessionStorage only. Never sent anywhere except Anthropic.</p>
+        </div>
 
       </section>
     </div>
@@ -212,7 +216,25 @@
       <div class="card">
         <h2>Your Stats</h2>
 
-        <div class="score-grid" style="margin-top: calc(var(--space) * 3)">
+        <div class="section-label">Save Progress</div>
+        <div class="name-row">
+          <input id="stats-name" type="text" class="text-input" placeholder="Your name" autocomplete="off" />
+          <button id="stats-save-name-btn" class="btn btn-ghost">Save</button>
+        </div>
+
+        <div class="transfer-row">
+          <button id="stats-export-btn" class="btn btn-ghost">Export</button>
+          <label class="btn btn-ghost" style="cursor: pointer;">
+            Import
+            <input id="stats-import-input" type="file" accept=".json" style="display:none" />
+          </label>
+        </div>
+
+        <p class="input-hint">Progress is stored in this browser only. Use Export / Import to move it across devices.</p>
+
+        <button id="stats-reset-btn" class="btn btn-ghost btn-small stats-reset" style="margin-top: calc(var(--space) * 2)">⚠ Reset all progress</button>
+
+        <div class="score-grid" style="margin-top: calc(var(--space) * 4)">
           <div class="score-cell">
             <div class="score-value" id="st-games">--</div>
             <div class="score-label">Games Played</div>
@@ -228,19 +250,6 @@
 
         <div class="section-label">Recent Games</div>
         <div id="st-history"></div>
-
-        <div class="section-label">Save Progress</div>
-        <input id="stats-name" type="text" class="text-input" placeholder="Your name" autocomplete="off" />
-        <button id="stats-save-name-btn" class="btn btn-ghost btn-small">Save Name</button>
-
-        <button id="stats-export-btn" class="btn btn-ghost btn-small" style="margin-top: calc(var(--space) * 2)">⬇ Export Progress</button>
-        <label class="btn btn-ghost btn-small" style="margin-top: calc(var(--space) * 1); cursor: pointer;">
-          ⬆ Import Progress
-          <input id="stats-import-input" type="file" accept=".json" style="display:none" />
-        </label>
-        <button id="stats-reset-btn" class="btn btn-ghost btn-small stats-reset">⚠ Reset Progress</button>
-
-        <p class="input-hint" style="margin-top: calc(var(--space) * 2)">Progress is stored in this browser only. Use Export / Import to move it across devices.</p>
 
         <button id="stats-back-btn" class="btn btn-primary btn-large">← Back</button>
       </div>
