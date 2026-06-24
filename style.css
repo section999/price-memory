@@ -56,7 +56,9 @@ body {
   display: block;
 }
 
-#screen-start.active {
+#screen-start.active,
+#screen-result.active,
+#screen-end.active {
   display: flex;
   align-items: center;
   justify-content: center;

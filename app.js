@@ -2122,6 +2122,9 @@ function initEndScreen() {
   document.getElementById('play-again-btn').addEventListener('click', () => {
     showScreen('screen-start');
   });
+  document.getElementById('end-home-btn').addEventListener('click', () => {
+    showScreen('screen-start');
+  });
 }
 
 function initStatsScreen() {
