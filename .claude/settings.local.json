@@ -3,7 +3,8 @@
     "allow": [
       "WebFetch(domain:omotenashi-training.freecode.camp)",
       "Bash(curl:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(node:*)"
     ]
   }
 }
