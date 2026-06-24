@@ -1729,6 +1729,7 @@ function saveGameResult(category, avgError) {
 
 function showStatsScreen() {
   showScreen('screen-stats');
+  document.getElementById('stats-name').value = localStorage.getItem('priceMemoryName') || '';
   const history = JSON.parse(localStorage.getItem(STATS_KEY) || '[]');
 
   // Overview
@@ -1922,13 +1923,18 @@ function handleSubmit() {
   const errorEl = document.getElementById('guess-error');
   const raw     = input.value.trim();
 
-  // Validation: reject empty, zero, or negative values
+  // Validation: reject empty, non-numeric, decimal, or non-positive values
   if (raw === '' || isNaN(Number(raw))) {
     errorEl.textContent = 'Please enter a number.';
     input.focus();
     return;
   }
   const guess = Number(raw);
+  if (!Number.isInteger(guess)) {
+    errorEl.textContent = 'Please enter a whole number.';
+    input.focus();
+    return;
+  }
   if (guess <= 0) {
     errorEl.textContent = 'Price must be greater than ₩0.';
     input.focus();
@@ -2025,6 +2031,7 @@ Style: Conversational, no jargon, concrete and specific.`;
 }
 
 function initResultScreen() {
+  document.getElementById('result-home-btn').addEventListener('click', () => showScreen('screen-start'));
   document.getElementById('next-btn').addEventListener('click', () => {
     state.currentIndex++;
     if (state.currentIndex < state.queue.length) {
@@ -2142,7 +2149,9 @@ function initStatsScreen() {
     const a = document.createElement('a');
     a.href = url;
     a.download = 'price-memory-progress.json';
+    document.body.appendChild(a);
     a.click();
+    document.body.removeChild(a);
     URL.revokeObjectURL(url);
   });
 

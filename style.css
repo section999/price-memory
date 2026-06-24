@@ -461,7 +461,8 @@ p {
    SCREEN 2: GAME
 ============================================================ */
 
-.question-card {
+.question-card,
+.result-card {
   position: relative;
 }
 
@@ -659,15 +660,16 @@ p {
 ============================================================ */
 .result-header {
   display: flex;
-  align-items: baseline;
-  gap: calc(var(--space) * 2);
-  margin-bottom: calc(var(--space) * 3);
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--space) * 1);
+  margin-bottom: calc(var(--space) * 4);
+  text-align: center;
 }
 
 .error-pct {
   font-family: var(--font-mono);
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 700;
   color: var(--accent-yellow);
   line-height: 1;
@@ -675,7 +677,7 @@ p {
 
 .accuracy-label {
   font-family: var(--font-mono);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--accent-green);
 }
 
@@ -684,14 +686,15 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: calc(var(--space) * 2);
-  margin-bottom: calc(var(--space) * 3);
+  margin-bottom: calc(var(--space) * 3.5);
 }
 
 .compare-cell {
   background-color: var(--bg-secondary);
   border: 1px solid var(--bg-subtle);
   border-radius: var(--radius);
-  padding: calc(var(--space) * 2);
+  padding: calc(var(--space) * 2.5);
+  text-align: center;
 }
 
 .compare-sublabel {
@@ -700,12 +703,12 @@ p {
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  margin-bottom: calc(var(--space) * 0.75);
+  margin-bottom: calc(var(--space) * 1);
 }
 
 .compare-value {
   font-family: var(--font-mono);
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   font-weight: 700;
 }
 
@@ -721,8 +724,9 @@ p {
 .multiplier-line {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: calc(var(--space) * 1.5);
-  margin-bottom: calc(var(--space) * 3);
+  margin-bottom: calc(var(--space) * 3.5);
 }
 
 .multiplier-past {
@@ -739,12 +743,12 @@ p {
 .multiplier-badge {
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: var(--accent-yellow);
   background-color: rgba(241, 190, 50, 0.1);
   border: 2px solid var(--accent-yellow);
   border-radius: var(--radius);
-  padding: calc(var(--space) * 0.4) calc(var(--space) * 1.2);
+  padding: calc(var(--space) * 0.5) calc(var(--space) * 1.5);
 }
 
 /* Proportional bar visual */
@@ -752,13 +756,13 @@ p {
   display: grid;
   grid-template-columns: 40px 1fr;
   align-items: center;
-  gap: calc(var(--space) * 1) calc(var(--space) * 1.5);
-  margin-bottom: calc(var(--space) * 3);
+  gap: calc(var(--space) * 1.2) calc(var(--space) * 1.5);
+  margin-bottom: calc(var(--space) * 3.5);
 }
 
 .bar-visual-label {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
   text-align: right;
 }
@@ -767,7 +771,7 @@ p {
   background-color: var(--bg-secondary);
   border: 1px solid var(--bg-subtle);
   border-radius: var(--radius);
-  height: 28px;
+  height: 36px;
   overflow: hidden;
 }
 
