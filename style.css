@@ -168,6 +168,14 @@ p {
   padding: calc(var(--space) * 2) calc(var(--space) * 3);
 }
 
+.btn-center {
+  display: block;
+  width: auto;
+  min-width: 160px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .btn-ghost {
   background-color: transparent;
   color: var(--text-muted);
@@ -453,11 +461,30 @@ p {
    SCREEN 2: GAME
 ============================================================ */
 
+.question-card {
+  position: relative;
+}
+
+.home-btn {
+  position: absolute;
+  top: calc(var(--space) * 1.5);
+  left: calc(var(--space) * 1.5);
+  font-size: 1.2rem;
+  padding: calc(var(--space) * 0.5) calc(var(--space) * 1);
+  border: none;
+  opacity: 0.6;
+}
+
+.home-btn:hover {
+  opacity: 1;
+}
+
 /* Progress dots */
 .progress-dots {
   display: flex;
   gap: calc(var(--space) * 1.5);
   justify-content: center;
+  width: 100%;
   margin-bottom: calc(var(--space) * 3);
 }
 
@@ -498,35 +525,74 @@ p {
 }
 
 .question-meta {
-  margin-bottom: calc(var(--space) * 1.5);
+  margin-bottom: calc(var(--space) * 2);
+  text-align: center;
+}
+
+.question-card .section-label {
+  font-size: 1.1rem;
+}
+
+.question-card .text-input {
+  font-size: 1.3rem;
+  padding: calc(var(--space) * 2);
+}
+
+.guess-section {
+  max-width: 360px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.guess-section .section-label {
+  display: block;
+  text-align: center;
+  margin-top: calc(var(--space) * 1);
+  margin-bottom: calc(var(--space) * 0.5);
+}
+
+.guess-section .text-input {
+  text-align: center;
+  margin-top: 0;
+}
+
+.guess-section .inline-error {
+  text-align: center;
+}
+
+.guess-section .btn-large {
+  margin-top: calc(var(--space) * 1);
 }
 
 .q-item-name {
   font-family: var(--font-mono);
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   color: var(--text-primary);
-  margin-bottom: calc(var(--space) * 0.75);
+  margin-bottom: calc(var(--space) * 1);
+  text-align: center;
 }
 
 .q-context {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--text-muted);
-  margin-bottom: calc(var(--space) * 2.5);
+  margin-bottom: calc(var(--space) * 3.5);
+  text-align: center;
 }
 
 /* Year bridge */
 .year-bridge {
   display: flex;
   align-items: center;
-  gap: calc(var(--space) * 1.5);
-  margin-bottom: calc(var(--space) * 2.5);
+  justify-content: center;
+  gap: calc(var(--space) * 2);
+  margin-bottom: calc(var(--space) * 3.5);
 }
 
 .year-badge {
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: 1rem;
-  padding: calc(var(--space) * 0.5) calc(var(--space) * 1.5);
+  font-size: 1.2rem;
+  padding: calc(var(--space) * 0.75) calc(var(--space) * 2);
   border-radius: var(--radius);
   border: 2px solid;
 }
@@ -543,31 +609,31 @@ p {
 
 .year-arrow {
   font-family: var(--font-mono);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: var(--text-muted);
 }
 
 /* Past price display */
 .past-price-block {
   display: flex;
-  align-items: baseline;
-  gap: calc(var(--space) * 2);
+  align-items: center;
+  justify-content: space-between;
   background-color: var(--bg-secondary);
   border: 1px solid var(--bg-subtle);
   border-radius: var(--radius);
-  padding: calc(var(--space) * 2) calc(var(--space) * 2.5);
-  margin-bottom: calc(var(--space) * 3);
+  padding: calc(var(--space) * 2.5) calc(var(--space) * 3);
+  margin-bottom: calc(var(--space) * 3.5);
 }
 
 .past-price-label {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 1.4rem;
   color: var(--text-muted);
 }
 
 .past-price-value {
   font-family: var(--font-mono);
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--accent-blue);
 }
@@ -577,8 +643,8 @@ p {
   background-color: var(--bg-secondary);
   border: 1px solid var(--bg-subtle);
   border-radius: var(--radius);
-  padding: calc(var(--space) * 2) calc(var(--space) * 1.5);
-  margin-bottom: calc(var(--space) * 3);
+  padding: calc(var(--space) * 2.5) calc(var(--space) * 2);
+  margin-bottom: calc(var(--space) * 4);
   overflow: hidden;
 }
 

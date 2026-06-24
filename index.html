@@ -63,13 +63,14 @@
   <div id="screen-game" class="screen">
     <div class="container">
 
-      <!-- Progress dots -->
-      <div id="progress-dots" class="progress-dots" role="progressbar" aria-label="Question progress">
-        <!-- Dots injected by JS -->
-      </div>
-
       <!-- Question card -->
       <div id="question-card" class="card question-card">
+
+        <!-- Home button + Progress dots -->
+        <button id="home-btn" class="btn btn-ghost home-btn">🏠</button>
+        <div id="progress-dots" class="progress-dots" role="progressbar" aria-label="Question progress">
+          <!-- Dots injected by JS -->
+        </div>
 
         <!-- Item info -->
         <div class="question-meta">
@@ -97,18 +98,19 @@
         </div>
 
         <!-- Guess input -->
-        <label for="guess-input" class="section-label">Your guess in ₩ (KRW)</label>
-        <input
-          id="guess-input"
-          type="number"
-          class="text-input"
-          placeholder="e.g. 15000"
-          min="1"
-          step="1"
-        />
-        <div id="guess-error" class="inline-error" role="alert" aria-live="polite"></div>
-
-        <button id="submit-btn" class="btn btn-primary btn-large">Submit →</button>
+        <div class="guess-section">
+          <label for="guess-input" class="section-label">Your guess in ₩ (KRW)</label>
+          <input
+            id="guess-input"
+            type="number"
+            class="text-input"
+            placeholder="e.g. 15000"
+            min="1"
+            step="1"
+          />
+          <div id="guess-error" class="inline-error" role="alert" aria-live="polite"></div>
+          <button id="submit-btn" class="btn btn-primary btn-large btn-center">Submit</button>
+        </div>
       </div>
     </div>
   </div>
@@ -163,7 +165,7 @@
           <p id="r-insight" class="ai-text">Analyzing...</p>
         </div>
 
-        <button id="next-btn" class="btn btn-primary btn-large">Next Question →</button>
+        <button id="next-btn" class="btn btn-primary btn-large">Next Question</button>
       </div>
     </div>
   </div>
@@ -203,7 +205,7 @@
           <p id="e-summary" class="ai-text">Analyzing...</p>
         </div>
 
-        <button id="play-again-btn" class="btn btn-primary btn-large">Play Again →</button>
+        <button id="play-again-btn" class="btn btn-primary btn-large">Play Again</button>
       </div>
     </div>
   </div>

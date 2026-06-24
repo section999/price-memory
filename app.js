@@ -1908,6 +1908,7 @@ function renderProgressDots(activeIndex, total) {
 }
 
 function initGameScreen() {
+  document.getElementById('home-btn').addEventListener('click', () => showScreen('screen-start'));
   document.getElementById('submit-btn').addEventListener('click', handleSubmit);
 
   // Allow Enter key to submit on the game screen
@@ -1997,7 +1998,7 @@ function showResultScreen(q, userGuess, errorPct, direction) {
   // "Next Question →" button: update label on last question
   const nextBtn = document.getElementById('next-btn');
   const isLast  = state.currentIndex >= state.queue.length - 1;
-  nextBtn.textContent = isLast ? 'See Results →' : 'Next Question →';
+  nextBtn.textContent = isLast ? 'See Results' : 'Next Question';
 }
 
 /** Build the per-question AI prompt */
