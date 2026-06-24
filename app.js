@@ -141,6 +141,914 @@ const RAW_QUESTIONS = [
     trend: [700, 1000, 1300, 1600, 2400, 3000, 3800, 4800],
     trendYears: [1990, 1994, 1998, 2002, 2007, 2013, 2019, 2024],
     fallbackInsight: 'Seoul taxi base fares rose from ₩700 in 1990 to ₩4,800 today: nearly 7×. The single biggest jump came in 2023, when fares leapt from ₩3,800 to ₩4,800 overnight, a 26% hike. Behind it: Kakao Taxi\'s dominance shifted bargaining power to drivers, and fuel plus labor costs had been building for years. Night surcharges and distance fees make the real increase even steeper.'
+  },
+  {
+    id: 'kimbap',
+    category: 'food',
+    item: 'Gimbap (김밥)',
+    context: 'One roll, standard restaurant',
+    pastYear: 1990,
+    trend: [500, 700, 1000, 1500, 2000, 2500, 3000, 4000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'Gimbap rose from ₩500 in 1990 to ₩4,000 today: 8×. Once called the "national lunch box," it is Korea\'s most accessible street food. Rice, eggs, and vegetables all got more expensive, but the biggest driver is labor: rolling gimbap by hand is skilled, time-intensive work. A convenience store roll is still cheaper, but the homemade-style restaurant version has crossed a price threshold that surprised many Koreans.'
+  },
+  {
+    id: 'samgyeopsal',
+    category: 'food',
+    item: 'Samgyeopsal (삼겹살)',
+    context: '200g per person serving, standard restaurant',
+    pastYear: 1995,
+    trend: [4000, 6000, 8000, 10000, 12000, 15000, 18000],
+    trendYears: [1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'Samgyeopsal rose from ₩4,000 per person in 1995 to ₩18,000 today: 4.5×. Pork belly itself hasn\'t risen dramatically, but everything around it has: charcoal or gas, lettuce, garlic, dipping sauces, and above all, restaurant rent and labor. Every outbreak of foot-and-mouth disease or African Swine Fever (ASF) triggers a short-term price spike. Samgyeopsal is the ultimate benchmark of the Korean social dining experience.'
+  },
+  {
+    id: 'soju',
+    category: 'food',
+    item: 'Soju — Restaurant Bottle (소주)',
+    context: 'One 360ml bottle, standard restaurant',
+    pastYear: 1990,
+    trend: [700, 1000, 1500, 2000, 3000, 4000, 5000, 6000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'Restaurant soju jumped from ₩700 in 1990 to ₩6,000 today: 8.6×. The supermarket price is only around ₩1,500 — the gap reveals how much rent, labor, and markup inflate the dining-out version. Post-COVID rent spikes hit restaurants hard, and soju became a convenient way to recover margin. Koreans notice every ₩500 hike on soju; it is an emotional price point like no other.'
+  },
+  {
+    id: 'bigmac',
+    category: 'food',
+    item: 'Big Mac (빅맥)',
+    context: "McDonald's Korea, standard price",
+    pastYear: 1995,
+    trend: [2300, 2900, 3200, 3700, 4400, 5400, 6500],
+    trendYears: [1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "The Big Mac is used globally as the 'Big Mac Index' to compare purchasing power. In Korea it rose from ₩2,300 in 1995 to ₩6,500 today: 2.8×. McDonald's raises prices conservatively to protect its mass-market image. But two sharp increases in 2022 and 2023, driven by global beef, bread, and labor cost surges, surprised consumers who had trusted the chain to hold the line."
+  },
+  {
+    id: 'naengmyeon',
+    category: 'food',
+    item: 'Naengmyeon (냉면)',
+    context: 'One bowl, standard restaurant',
+    pastYear: 1990,
+    trend: [2000, 3000, 4000, 5000, 7000, 8000, 10000, 13000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'Naengmyeon rose from ₩2,000 in 1990 to ₩13,000 today: 6.5×. The dish requires buckwheat noodles, beef broth, and garnishes — all of which track beef and grain prices. The moment famous old restaurants broke the ₩10,000 barrier around 2019, it became a national talking point. Now ₩13,000–15,000 is standard even at mid-range spots, and the "₩10,000 bowl of naengmyeon" already feels like a memory.'
+  },
+  {
+    id: 'melona',
+    category: 'food',
+    item: 'Melona Ice Cream (메로나)',
+    context: 'One bar, convenience store',
+    pastYear: 1992,
+    trend: [200, 300, 500, 600, 700, 800, 1000, 1500],
+    trendYears: [1992, 1997, 2002, 2006, 2010, 2014, 2018, 2024],
+    fallbackInsight: "Melona launched in 1992 at ₩200 — Korea's quintessential summer treat. It has risen to ₩1,500 today: 7.5×. For years, ice cream prices were one of Korea's most politically sensitive categories; manufacturers absorbed cost increases to avoid backlash. Then in 2022, raw material and logistics shocks forced simultaneous hikes industry-wide. 'The ₩1,000 Melona' is now nostalgia."
+  },
+  {
+    id: 'bread',
+    category: 'food',
+    item: 'White Bread Loaf (식빵)',
+    context: 'Standard supermarket loaf (~270g)',
+    pastYear: 1990,
+    trend: [600, 800, 1200, 1500, 2000, 2500, 3000, 3800],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'A loaf of white bread rose from ₩600 in 1990 to ₩3,800 today: 6.3×. Korea imports over 90% of its wheat, making bread prices directly exposed to international grain markets. The 2022 Russian invasion of Ukraine devastated global wheat supply, and Korean bread prices spiked nearly 30% in a single year. It was a vivid reminder of import dependency in something as basic as a morning sandwich.'
+  },
+  {
+    id: 'pizza',
+    category: 'food',
+    item: 'Delivery Pizza — Regular Size',
+    context: "Domino's or Pizza Hut, standard menu",
+    pastYear: 2000,
+    trend: [12000, 15000, 17000, 19000, 21000, 23000, 28000],
+    trendYears: [2000, 2005, 2009, 2012, 2015, 2019, 2024],
+    fallbackInsight: 'Delivery pizza rose from ₩12,000 in 2000 to ₩28,000 today: 2.3×. The biggest recent driver is not ingredients but delivery app commissions: Baemin and Coupang Eats now take 15–30% of each order. Pizza chains responded with menu price hikes. Coupons and deals still exist, but the base sticker price has crossed ₩25,000–30,000, making pizza a semi-premium item rather than a casual weeknight meal.'
+  },
+  {
+    id: 'triangle_kimbap',
+    category: 'food',
+    item: 'Triangle Kimbap (삼각김밥)',
+    context: 'Convenience store, standard filling',
+    pastYear: 2000,
+    trend: [500, 600, 700, 800, 1000, 1200, 1500],
+    trendYears: [2000, 2003, 2006, 2009, 2013, 2018, 2024],
+    fallbackInsight: 'Triangle kimbap was ₩500 in 2000 — the original Korean convenience meal. At ₩1,500 today, it has only tripled over 24 years: one of the smaller increases in this game. Automated factory production kept costs down. But since 2022, rising rice, sesame oil, and minimum wage costs have pushed prices higher every year. The era of the ₩1,000 onigiri is ending.'
+  },
+  {
+    id: 'seolleongtang',
+    category: 'food',
+    item: 'Seolleongtang (설렁탕)',
+    context: 'One bowl, standard restaurant',
+    pastYear: 1990,
+    trend: [2000, 3000, 4000, 5000, 7000, 8000, 10000, 12000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'Seolleongtang rose from ₩2,000 in 1990 to ₩12,000 today: 6×. The soup requires beef bones simmered for 12+ hours, making energy costs and labor unusually high. It is also a benchmark of "old Seoul" neighborhood dining — the restaurants that served it for decades are closing as rents rise. The bowl you get today costs 6× more than your parents paid, and is often made by fewer people in a smaller kitchen.'
+  },
+  {
+    id: 'ktx',
+    category: 'transport',
+    item: 'KTX Seoul–Busan',
+    context: 'Standard seat, one way',
+    pastYear: 2004,
+    trend: [41500, 44800, 49800, 53600, 59800, 59800, 62800],
+    trendYears: [2004, 2007, 2010, 2013, 2017, 2020, 2024],
+    fallbackInsight: 'KTX Seoul–Busan launched in 2004 at ₩41,500 and sits at ₩62,800 today: a 51% rise. Compared to food prices that have tripled or more, the KTX has stayed remarkably affordable. As a state-owned rail system, KORAIL suppresses fare increases for political and social reasons. The real cost of operating high-speed rail is far higher than the ticket price; the gap is covered by public funds.'
+  },
+  {
+    id: 'gasoline',
+    category: 'transport',
+    item: 'Gasoline (휘발유)',
+    context: 'Per liter, national average pump price',
+    pastYear: 1995,
+    trend: [600, 1000, 1400, 1900, 1750, 1600, 1400, 1700],
+    trendYears: [1995, 2000, 2005, 2008, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'Gasoline rose from ₩600/L in 1995 to ₩1,700 in 2024: 2.8×. But the chart is a roller coaster. The 2008 oil crisis pushed it past ₩1,900; the 2020 COVID collapse pulled it below ₩1,400; the 2022 energy crisis spiked it again. About 50% of the pump price is taxes. Korea\'s gasoline price is almost entirely set by two things: the global crude market and the Korean tax code.'
+  },
+  {
+    id: 'expressway_toll',
+    category: 'transport',
+    item: 'Highway Toll Seoul–Busan',
+    context: 'Passenger car, Gyeongbu Expressway (경부고속도로)',
+    pastYear: 1995,
+    trend: [10900, 14400, 18600, 23900, 24100, 24100, 26000],
+    trendYears: [1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'The Seoul–Busan highway toll rose from ₩10,900 in 1995 to ₩26,000 today: 2.4×. For a public infrastructure fee, this is a relatively modest rise. Korea Expressway Corporation is state-owned and politically constrained on price. But private expressways (민자고속도로) are a different story — their tolls rose far faster with less oversight, creating a two-tier system on Korea\'s roads.'
+  },
+  {
+    id: 'karaoke',
+    category: 'culture',
+    item: 'Norebang (노래방)',
+    context: 'Per hour, standard private room',
+    pastYear: 1995,
+    trend: [3000, 5000, 6000, 8000, 10000, 12000, 15000],
+    trendYears: [1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'Norebang was born in Korea and spread across Asia. From ₩3,000/hour in 1995 to ₩15,000 today: 5×. Rent, music licensing fees, and equipment upgrades all contributed. The rise of coin-operated mini norebang in the late 2010s created a cheaper alternative, but private room karaoke prices continued climbing. It remains a core Korean social ritual regardless of cost.'
+  },
+  {
+    id: 'jjimjilbang',
+    category: 'culture',
+    item: 'Jjimjilbang (찜질방)',
+    context: 'Entry fee, standard facility',
+    pastYear: 1995,
+    trend: [3000, 5000, 7000, 8000, 9000, 10000, 12000],
+    trendYears: [1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'Jjimjilbang entry rose from ₩3,000 in 1995 to ₩12,000 today: 4×. Energy is the dominant cost: heating sauna rooms, pools, and sleeping areas 24/7 is expensive. The 2022 energy price surge hit jjimjilbang especially hard — many raised prices or closed. As an informal overnight shelter for travelers and unhoused people alike, jjimjilbang price hikes have real social consequences beyond mere inconvenience.'
+  },
+  {
+    id: 'pccafe',
+    category: 'culture',
+    item: 'PC Café (PC방)',
+    context: 'Per hour, standard seat',
+    pastYear: 1999,
+    trend: [1000, 1000, 1000, 1000, 1000, 1500, 2000],
+    trendYears: [1999, 2003, 2007, 2011, 2016, 2020, 2024],
+    fallbackInsight: 'PC cafés held ₩1,000 per hour for nearly two decades — one of the most remarkable price locks in Korean consumer history. Competition was so intense that no one dared raise prices. Then in the 2020s, rising minimum wages and rent finally broke the dam. ₩2,000/hour is now common in urban areas. The "₩1,000 PC bang" era, central to Korean gaming culture, is officially over.'
+  },
+  {
+    id: 'newspaper',
+    category: 'culture',
+    item: 'Newspaper Subscription (신문)',
+    context: 'Monthly subscription, major daily paper',
+    pastYear: 1990,
+    trend: [3000, 5000, 7000, 10000, 13000, 15000, 18000, 20000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'A monthly newspaper subscription rose from ₩3,000 in 1990 to ₩20,000 today: 6.7×. But readership has collapsed. As advertising moved online, publishers lost revenue and compensated by raising subscription prices. This created a doom loop: higher prices drove more cancellations, which required further price hikes. Print journalism is now expensive and niche — a textbook example of a dying industry\'s pricing spiral.'
+  },
+  {
+    id: 'novel',
+    category: 'culture',
+    item: 'Korean Novel (소설책)',
+    context: 'New release, major publisher',
+    pastYear: 1990,
+    trend: [3000, 5000, 7000, 8000, 10000, 12000, 14000, 17000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'A Korean novel cost ₩3,000 in 1990 and costs ₩17,000 today: 5.7×. Paper, printing, and labor all rose. E-books are now 60–70% of the print price, but many readers still prefer physical books. The bigger story: Korean publishing is thriving globally thanks to the Hallyu wave — BTS, Squid Game, and Korean literature exports are all rising. The industry is paradoxical: culturally booming, economically fragile.'
+  },
+  {
+    id: 'baseball',
+    category: 'culture',
+    item: 'KBO Baseball Ticket',
+    context: 'Standard seat (일반석), KBO League',
+    pastYear: 2000,
+    trend: [3000, 5000, 8000, 10000, 12000, 13000, 15000],
+    trendYears: [2000, 2005, 2010, 2015, 2019, 2022, 2024],
+    fallbackInsight: 'KBO baseball tickets rose from ₩3,000 in 2000 to ₩15,000 today: 5×. Baseball attendance has boomed, especially since 2023–2024 when the league set new records. As demand exploded, teams raised prices aggressively. Premium seating now commands ₩30,000–50,000. Chimaek (chicken + beer) at the stadium adds another ₩20,000+. A family outing to a game is now a significant expense.'
+  },
+  {
+    id: 'galaxy',
+    category: 'tech',
+    item: 'Samsung Galaxy Flagship (갤럭시)',
+    context: 'S-series top model, launch retail price',
+    pastYear: 2010,
+    trend: [800000, 900000, 900000, 990000, 1000000, 1250000, 1350000],
+    trendYears: [2010, 2012, 2014, 2016, 2019, 2022, 2024],
+    fallbackInsight: "Samsung's Galaxy flagship rose from ₩800,000 in 2010 to ₩1,350,000 today: 1.7×. But performance improved perhaps 1,000×. Whether this counts as inflation depends on how you measure it. In absolute won terms, flagship phones got more expensive; in performance-per-won terms, they got dramatically cheaper. The real shift: mid-range phones now outperform 2010's flagship, making the premium segment feel increasingly optional."
+  },
+  {
+    id: 'internet',
+    category: 'tech',
+    item: 'Home Internet (인터넷)',
+    context: 'Monthly broadband subscription',
+    pastYear: 2000,
+    trend: [35000, 30000, 27000, 25000, 25000, 27000, 30000],
+    trendYears: [2000, 2005, 2008, 2012, 2016, 2020, 2024],
+    fallbackInsight: 'Home internet is one of the few items that got cheaper. From ₩35,000/month in 2000 to ₩25,000 at its cheapest (2012–2018), before creeping back to ₩30,000. Technology cost curves and fierce ISP competition drove the decline. Korea went from dial-up to the world\'s fastest broadband without a significant price increase. In this game, almost everything went up — internet is the rare exception, and it\'s worth noticing.'
+  },
+  {
+    id: 'laptop',
+    category: 'tech',
+    item: 'Mid-range Laptop (노트북)',
+    context: 'Samsung/LG standard model',
+    pastYear: 2000,
+    trend: [1500000, 1200000, 900000, 700000, 700000, 800000, 1000000],
+    trendYears: [2000, 2004, 2008, 2012, 2016, 2020, 2024],
+    fallbackInsight: 'A mid-range laptop cost ₩1,500,000 in 2000 and costs around ₩1,000,000 today — nominally 33% cheaper, but infinitely more powerful. It dropped to ₩700,000 by 2012 as manufacturing scaled. Then pandemic demand and chip shortages pushed prices back up. The real question is not "did the price change?" but "how much computing power does ₩1 million buy?" — and that answer is incomparably better today.'
+  },
+  {
+    id: 'wireless_earphones',
+    category: 'tech',
+    item: 'Wireless Earphones (무선 이어폰)',
+    context: 'Mid-range TWS earphones',
+    pastYear: 2017,
+    trend: [150000, 120000, 100000, 80000, 70000],
+    trendYears: [2017, 2019, 2020, 2022, 2024],
+    fallbackInsight: "TWS earphones entered mass market around 2017 at ₩150,000 for a decent mid-range pair. By 2024 you can find capable ones for ₩70,000: a 53% price drop in 7 years. Chinese manufacturers commoditized the category with remarkable speed. This is the tech deflation story compressed into a single product cycle. In a game full of items that cost 4–10× more than before, wireless earphones went the other way entirely."
+  },
+
+  // ── FOOD (25 more) ──────────────────────────────────────────
+  {
+    id: 'donkkaseu',
+    category: 'food',
+    item: 'Donkkaseu (돈가스)',
+    context: 'Standard pork cutlet restaurant',
+    pastYear: 1990,
+    trend: [2000, 3000, 4000, 5000, 7000, 8000, 10000, 13000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'Donkkaseu rose from ₩2,000 in 1990 to ₩13,000 today: 6.5×. A staple of Korean school cafeterias and family restaurants, the dish requires pork loin, breadcrumbs, and frying oil — all of which rose in price. Energy costs for commercial fryers are significant. The "학생 돈가스" that once cost pocket money is now a sit-down meal expense.'
+  },
+  {
+    id: 'sundaegukbap',
+    category: 'food',
+    item: 'Sundae Gukbap (순대국밥)',
+    context: 'One bowl, standard restaurant',
+    pastYear: 1990,
+    trend: [1500, 2000, 3000, 4000, 5000, 7000, 8000, 10000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'Sundae gukbap rose from ₩1,500 in 1990 to ₩10,000 today: 6.7×. Once the cheapest hot meal a Korean worker could buy, it is now approaching five digits. Pork offal and blood sausage prices track pork industry costs closely. The meal\'s working-class identity is now at odds with its climbing price tag.'
+  },
+  {
+    id: 'bibimbap',
+    category: 'food',
+    item: 'Bibimbap (비빔밥)',
+    context: 'One bowl, standard restaurant',
+    pastYear: 1990,
+    trend: [2000, 3000, 4000, 5000, 7000, 8000, 10000, 12000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'Bibimbap rose from ₩2,000 in 1990 to ₩12,000 today: 6×. The dish requires over 10 separate vegetable toppings, each prepared individually — labor-intensive even by Korean standards. It is now served in airline business class and high-end restaurants globally, yet the neighborhood bowl has also quietly crossed the ₩10,000 barrier.'
+  },
+  {
+    id: 'kimchijjigae',
+    category: 'food',
+    item: 'Kimchi Jjigae (김치찌개)',
+    context: 'Per person, standard restaurant',
+    pastYear: 1990,
+    trend: [1500, 2500, 3500, 4500, 6000, 7000, 8000, 10000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "Korea's national comfort food rose from ₩1,500 in 1990 to ₩10,000 today: 6.7×. Made from aged kimchi, pork, and tofu — all of which rose in price. Its widespread availability made it a go-to cheap meal for decades, but it has now crossed the ₩10,000 mark alongside nearly every other Korean staple."
+  },
+  {
+    id: 'samgyetang',
+    category: 'food',
+    item: 'Samgyetang (삼계탕)',
+    context: 'One whole chicken, standard restaurant',
+    pastYear: 1990,
+    trend: [5000, 7000, 10000, 12000, 14000, 16000, 18000, 22000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'Samgyetang rose from ₩5,000 in 1990 to ₩22,000 today: 4.4×. Traditionally eaten on the hottest days of summer (복날), it requires a whole small chicken, ginseng, jujubes, and garlic — ingredients that all rose with agricultural inflation. Avian flu outbreaks periodically spike chicken prices. As a seasonal ritual dish, consumers pay a premium without much resistance.'
+  },
+  {
+    id: 'tteokbokki',
+    category: 'food',
+    item: 'Tteokbokki (떡볶이)',
+    context: 'Standard street food portion',
+    pastYear: 1990,
+    trend: [500, 700, 1000, 1500, 2000, 3000, 4000, 5000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "Tteokbokki rose from ₩500 in 1990 to ₩5,000 today: 10×. Korea's most iconic street food has risen as fast as jjajangmyeon over the same period. Rice cake prices track rice costs; gochujang has also risen sharply. The dish migrated from pojangmacha carts to franchise chains, which brought standardization but also higher margins."
+  },
+  {
+    id: 'kalguksu',
+    category: 'food',
+    item: 'Kalguksu (칼국수)',
+    context: 'One bowl, standard restaurant',
+    pastYear: 1990,
+    trend: [1500, 2000, 3000, 4000, 5000, 7000, 8000, 10000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'Kalguksu rose from ₩1,500 in 1990 to ₩10,000 today: 6.7×. The dish depends heavily on wheat flour — a global commodity that spiked dramatically in 2022 due to the Ukraine conflict. Kalguksu restaurants were among the first to announce ₩10,000 prices and face customer backlash. The hand-cut noodle, once the humble alternative to ramen, has joined the five-figure club.'
+  },
+  {
+    id: 'sundubujjigae',
+    category: 'food',
+    item: 'Sundubu Jjigae (순두부찌개)',
+    context: 'One serving, standard restaurant',
+    pastYear: 1995,
+    trend: [3000, 4000, 5000, 6000, 7000, 8000, 10000],
+    trendYears: [1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'Sundubu jjigae rose from ₩3,000 in 1995 to ₩10,000 today: 3.3×. One of the slower inflation rates in Korean food, partly because tofu production is highly mechanized and soybean imports have been relatively stable. Yet the restaurant price has still more than tripled, driven primarily by labor and rent rather than ingredients.'
+  },
+  {
+    id: 'convenience_lunch',
+    category: 'food',
+    item: 'Convenience Store Lunchbox (도시락)',
+    context: 'Standard meal set, CU/GS25/7-Eleven',
+    pastYear: 2000,
+    trend: [2000, 2500, 3000, 3500, 4000, 4500, 5500],
+    trendYears: [2000, 2004, 2008, 2011, 2015, 2019, 2024],
+    fallbackInsight: "Convenience store lunchboxes rose from ₩2,000 in 2000 to ₩5,500 today: 2.75×. The industry's scale and automation kept price increases modest for years. But since 2022, rice, meat, and packaging costs all spiked simultaneously. The convenience lunchbox became a national symbol during the 2023 'lunchflation' debate, when restaurant prices drove workers toward it — only to find it had also jumped."
+  },
+  {
+    id: 'latte',
+    category: 'food',
+    item: 'Café Latte (라떼)',
+    context: 'Starbucks Korea, tall size',
+    pastYear: 2000,
+    trend: [3500, 3800, 4000, 4300, 4600, 5000, 6100],
+    trendYears: [2000, 2003, 2006, 2009, 2012, 2016, 2024],
+    fallbackInsight: 'A Starbucks latte rose from ₩3,500 in 2000 to ₩6,100 today: 1.7×, one of the slowest rises in this game. Starbucks deliberately suppresses price increases to protect its aspirational brand. But milk prices jumped 30% in 2022–2023, finally forcing a hike. Relative to general inflation, a Starbucks latte has actually gotten cheaper in real terms over 24 years.'
+  },
+  {
+    id: 'draft_beer',
+    category: 'food',
+    item: 'Draft Beer (생맥주)',
+    context: 'One 500ml glass, standard restaurant/hof',
+    pastYear: 1990,
+    trend: [1000, 1500, 2000, 2500, 3000, 4000, 5000, 6000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "Draft beer rose from ₩1,000 in 1990 to ₩6,000 today: 6×. Beer itself is relatively cheap; what costs money is the venue. Post-COVID rent and labor surges pushed hof (Korean beer pub) prices up sharply. The classic chimaek (chicken + beer) combo that once cost ₩15,000 for two people now runs ₩30,000–40,000."
+  },
+  {
+    id: 'makgeolli',
+    category: 'food',
+    item: 'Makgeolli (막걸리)',
+    context: 'One bottle, standard restaurant',
+    pastYear: 1990,
+    trend: [500, 800, 1200, 1500, 2000, 2500, 3000, 4000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "Restaurant makgeolli rose from ₩500 in 1990 to ₩4,000 today: 8×. Korea's traditional rice wine was once the cheapest alcoholic drink available. Supermarket prices remain under ₩2,000, but the restaurant premium has grown dramatically. The drink has transformed from a laborer's staple into a trending artisan product, with craft versions exceeding ₩10,000."
+  },
+  {
+    id: 'rice_20kg',
+    category: 'food',
+    item: 'Rice (쌀) — 20kg Bag',
+    context: 'Standard white rice, major supermarket',
+    pastYear: 1990,
+    trend: [20000, 28000, 35000, 40000, 50000, 45000, 50000, 58000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "A 20kg bag of rice rose from ₩20,000 in 1990 to ₩58,000 today: 2.9×. Rice is one of the slowest-rising foods in Korea due to heavy government intervention: price supports for farmers and strategic stockpiling cap both floors and ceilings. Yet even with intervention, rice costs nearly triple what it did 30 years ago. Korea's rice consumption has also halved as diets diversified."
+  },
+  {
+    id: 'milk',
+    category: 'food',
+    item: 'Milk (우유) — 1L',
+    context: 'Standard whole milk, major supermarket',
+    pastYear: 1990,
+    trend: [500, 700, 900, 1100, 1400, 1800, 2000, 2500],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'Milk rose from ₩500/L in 1990 to ₩2,500 today: 5×. Korean dairy farming is heavily protected: raw milk prices are set by a government-negotiated system, not the market. This means Korean milk costs far more than imported alternatives, but it shields domestic farmers. In 2023, the raw milk price was raised by the largest amount in 10 years, flowing immediately to store shelves.'
+  },
+  {
+    id: 'eggs_30',
+    category: 'food',
+    item: 'Eggs (계란) — 30-Pack',
+    context: 'Standard tray, major supermarket',
+    pastYear: 1990,
+    trend: [1500, 2000, 2500, 3000, 4000, 5000, 6000, 8000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'A 30-pack of eggs rose from ₩1,500 in 1990 to ₩8,000 today: 5.3×. But the chart has violent spikes: every major avian influenza outbreak culls tens of millions of hens, sending prices surging 50–100% in weeks. The 2017 outbreak was so severe the government temporarily allowed imports. Egg prices are a leading indicator of food anger in Korean politics.'
+  },
+  {
+    id: 'snack_shrimp',
+    category: 'food',
+    item: 'Saewoo Kang (새우깡)',
+    context: 'Standard 90g bag, convenience store',
+    pastYear: 1990,
+    trend: [200, 300, 500, 600, 700, 800, 1000, 1500],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "Saewoo Kang (shrimp crackers) launched in 1971 and has been Korea's best-selling snack for over 50 years. From ₩200 in 1990 to ₩1,500 today: 7.5×. Nongshim held the price at ₩800 for years before a major jump in 2022. The bag size has quietly shrunk while the price rose — a phenomenon economists call 'shrinkflation.' You are paying more for less, twice over."
+  },
+  {
+    id: 'instant_coffee',
+    category: 'food',
+    item: 'Maxim Coffee Mix (맥심) — 50-Pack',
+    context: 'Dongseo Foods, standard box',
+    pastYear: 1990,
+    trend: [3000, 4000, 5000, 7000, 9000, 12000, 14000, 18000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "Maxim coffee mix rose from ₩3,000 for 50 sachets in 1990 to ₩18,000 today: 6×. It has been Korea's default office and home coffee for decades, served at every meeting and condolence call. Coffee bean and sugar prices rose, but the bigger driver is brand premium: Maxim holds ~70% market share and prices accordingly."
+  },
+  {
+    id: 'bubble_tea',
+    category: 'food',
+    item: 'Bubble Tea (버블티)',
+    context: 'Gong Cha or similar chain, standard size',
+    pastYear: 2012,
+    trend: [3500, 4000, 4500, 5000, 5500, 6000],
+    trendYears: [2012, 2015, 2017, 2019, 2022, 2024],
+    fallbackInsight: 'Bubble tea entered Korean mainstream around 2012 at ₩3,500 and has risen to ₩6,000 today: 1.7× in 12 years. Relatively modest compared to other food prices, partly because the category is still expansion-focused. Chains also introduced premium add-ons (brown sugar, cheese foam) that quietly pushed average spend higher than the base price suggests.'
+  },
+  {
+    id: 'donut',
+    category: 'food',
+    item: 'Glazed Donut (도넛)',
+    context: "Dunkin' Korea, standard glazed donut",
+    pastYear: 1994,
+    trend: [500, 700, 900, 1100, 1300, 1500, 1800, 2500],
+    trendYears: [1994, 1998, 2002, 2006, 2010, 2014, 2019, 2024],
+    fallbackInsight: "Dunkin's glazed donut rose from ₩500 in 1994 to ₩2,500 today: 5×. Dunkin' entered Korea in 1994 and became a teen snack staple. For years the price stayed under ₩1,000, making it one of the cheapest Western treats. The 2022 surge in wheat, oil, and sugar simultaneously hit bakeries across the board. A box of a dozen donuts now costs as much as a full restaurant meal did 20 years ago."
+  },
+  {
+    id: 'lotteria_burger',
+    category: 'food',
+    item: 'Lotteria Bulgogi Burger (불고기버거)',
+    context: 'Lotteria Korea, standard menu price',
+    pastYear: 1990,
+    trend: [800, 1200, 1700, 2100, 2500, 3000, 3500, 4500],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "Lotteria's Bulgogi Burger rose from ₩800 in 1990 to ₩4,500 today: 5.6×. Lotteria opened in 1979 as Korea's first fast food chain and the bulgogi burger became its signature. For decades it was the affordable option compared to McDonald's. The two chains now cost roughly the same, but Lotteria's Korean-style flavors hold nostalgic loyalty among older consumers."
+  },
+  {
+    id: 'galbitang',
+    category: 'food',
+    item: 'Galbitang (갈비탕)',
+    context: 'One bowl, standard restaurant',
+    pastYear: 1990,
+    trend: [4000, 6000, 8000, 10000, 13000, 15000, 18000, 22000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "Galbitang rose from ₩4,000 in 1990 to ₩22,000 today: 5.5×. Beef short rib soup is expensive because short ribs are a premium cut. Korean beef (한우) prices have risen with income levels and quality expectations: consumers increasingly demand domestically raised beef, which costs far more than imported alternatives. Galbitang is now a celebration meal as much as a regular one."
+  },
+  {
+    id: 'convenience_coffee',
+    category: 'food',
+    item: 'Convenience Store Coffee (편의점 아메리카노)',
+    context: 'Fresh-brewed Americano, GS25/CU machine',
+    pastYear: 2011,
+    trend: [1000, 1000, 1000, 1200, 1500, 1800],
+    trendYears: [2011, 2013, 2015, 2018, 2021, 2024],
+    fallbackInsight: "Convenience store fresh-brewed coffee launched around 2011 at a disruptive ₩1,000, threatening cafés industry-wide. It held ₩1,000 for years through fierce competition. By 2024 it has risen to ₩1,800 — still the cheapest fresh coffee in Korea, but the original promise is fading. The ₩1,000 coffee was briefly Korea's most disruptive consumer product; that era is ending."
+  },
+  {
+    id: 'kimchi_1kg',
+    category: 'food',
+    item: 'Cabbage Kimchi (포기김치) — 1kg',
+    context: 'Store-bought, major supermarket brand',
+    pastYear: 1995,
+    trend: [2000, 3000, 4000, 5000, 7000, 8000, 10000, 12000],
+    trendYears: [1995, 2000, 2004, 2008, 2012, 2016, 2020, 2024],
+    fallbackInsight: "Store-bought kimchi rose from ₩2,000/kg in 1995 to ₩12,000 today: 6×. Napa cabbage (배추) is one of Korea's most politically volatile food prices — a bad harvest triggers a national crisis. The 2010 'kimchi crisis' when cabbage prices spiked 500% in two months forced government imports and dominated headlines. Store-bought has grown as fewer households make their own winter kimchi."
+  },
+  {
+    id: 'japchae',
+    category: 'food',
+    item: 'Japchae (잡채)',
+    context: 'One serving, standard restaurant',
+    pastYear: 1990,
+    trend: [2000, 3000, 4000, 5000, 7000, 9000, 12000, 15000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'Japchae (glass noodle stir-fry) rose from ₩2,000 in 1990 to ₩15,000 today: 7.5×. The dish requires glass noodles, multiple vegetables, beef, and sesame oil — making it labor-intensive even among Korean dishes. It is a staple of Korean celebrations (제사, 생일), so demand stays high regardless of price. Premium japchae with extra beef can now exceed ₩20,000.'
+  },
+  {
+    id: 'convenience_beer',
+    category: 'food',
+    item: 'Canned Beer (맥주) — 500ml',
+    context: 'Convenience store, domestic brand (Hite/Cass)',
+    pastYear: 2000,
+    trend: [1000, 1200, 1500, 1700, 2000, 2500, 3000],
+    trendYears: [2000, 2004, 2008, 2012, 2016, 2020, 2024],
+    fallbackInsight: 'A 500ml can of domestic beer rose from ₩1,000 in 2000 to ₩3,000 today: 3×. Korean beer brands long held prices artificially low to compete with imported craft beers that arrived in the 2010s. Post-COVID grain and aluminum cost surges forced them to catch up. "Four cans for ₩10,000" convenience store deals are increasingly being phased out or quietly shrinking.'
+  },
+
+  // ── TRANSPORT (10 more) ──────────────────────────────────────
+  {
+    id: 'express_bus',
+    category: 'transport',
+    item: 'Express Bus Seoul–Busan',
+    context: 'Standard seat (일반), one way',
+    pastYear: 1990,
+    trend: [5000, 8000, 12000, 17000, 22000, 26000, 28000, 32000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "Express bus Seoul–Busan rose from ₩5,000 in 1990 to ₩32,000 today: 6.4×. Before KTX (2004), the express bus was Korea's primary intercity connection. Even now it competes on price with the train. Fuel, driver wages, and terminal fees all contributed. The premium 우등 (luxury class) bus started ₩1,000 above standard and now runs ₩47,000 — the gap has widened considerably."
+  },
+  {
+    id: 'airport_bus',
+    category: 'transport',
+    item: 'Airport Limousine Bus',
+    context: 'Seoul Station to Incheon Airport',
+    pastYear: 2001,
+    trend: [7000, 9000, 10000, 12000, 14000, 15000, 17000],
+    trendYears: [2001, 2005, 2008, 2011, 2015, 2019, 2024],
+    fallbackInsight: 'Incheon Airport limousine bus rose from ₩7,000 in 2001 to ₩17,000 today: 2.4×. Fuel, highway tolls, and driver wages all contributed. The bus competes with AREX (Airport Railroad), which opened in 2010 — competition kept prices relatively in check. For budget travelers, it is still 5× cheaper than a taxi to the airport.'
+  },
+  {
+    id: 'mugungwha',
+    category: 'transport',
+    item: 'Mugunghwa Train Seoul–Busan',
+    context: 'Standard seat, one way (무궁화호)',
+    pastYear: 1990,
+    trend: [6600, 10000, 14000, 19500, 24000, 28200, 28200, 30000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "The Mugunghwa train rose from ₩6,600 in 1990 to ₩30,000 today: 4.5×. For decades it was the people's intercity option: slower but cheaper than the express bus. KTX's 2004 arrival gradually cannibalized its ridership. KORAIL keeps Mugunghwa fares low as a social service, but the trains are aging and routes are being cut. It may not survive another decade."
+  },
+  {
+    id: 'courier',
+    category: 'transport',
+    item: 'Courier Delivery (택배)',
+    context: 'Small box, CJ Logistics door-to-door',
+    pastYear: 2000,
+    trend: [2000, 2500, 3000, 3500, 4000, 5000, 6000, 7000],
+    trendYears: [2000, 2004, 2008, 2012, 2015, 2018, 2021, 2024],
+    fallbackInsight: 'Courier delivery rose from ₩2,000 in 2000 to ₩7,000 today: 3.5×. Korea built one of the world\'s most efficient last-mile delivery networks, and for years competition kept prices low. But COVID exploded e-commerce volume while drivers demanded better conditions — the 2021 delivery worker deaths from overwork became a national controversy. The era of ₩2,500 delivery is over.'
+  },
+  {
+    id: 'car_wash',
+    category: 'transport',
+    item: 'Automatic Car Wash (자동 세차)',
+    context: 'Standard tunnel wash, gas station',
+    pastYear: 1995,
+    trend: [2000, 3000, 4000, 5000, 6000, 7000, 8000, 10000],
+    trendYears: [1995, 2000, 2005, 2008, 2012, 2016, 2020, 2024],
+    fallbackInsight: 'Automatic car wash rose from ₩2,000 in 1995 to ₩10,000 today: 5×. Water, electricity, cleaning chemicals, and machine maintenance all rose. As car ownership became nearly universal, the market expanded — but so did real estate costs for the large footprints car washes require. Premium touch-free washes now run ₩15,000–20,000.'
+  },
+  {
+    id: 'car_insurance',
+    category: 'transport',
+    item: 'Car Insurance (자동차 보험)',
+    context: 'Annual premium, mid-size sedan, 30-year-old driver',
+    pastYear: 1995,
+    trend: [300000, 450000, 600000, 700000, 750000, 800000, 850000, 900000],
+    trendYears: [1995, 2000, 2005, 2008, 2012, 2016, 2020, 2024],
+    fallbackInsight: "Car insurance premiums rose from ₩300,000/year in 1995 to ₩900,000 today: 3×. Repair costs for modern cars packed with sensors are dramatically higher than for older models. Medical cost inflation also raised injury claim payouts. Insurance companies are effectively pricing technology upgrades you didn't choose: a fender bender that cost ₩200,000 to repair in 2005 now costs ₩800,000+."
+  },
+  {
+    id: 'parking',
+    category: 'transport',
+    item: 'Seoul City Parking (서울 주차)',
+    context: '1 hour, public parking lot, central Seoul',
+    pastYear: 1995,
+    trend: [300, 500, 800, 1000, 1500, 2000, 2500, 3000],
+    trendYears: [1995, 2000, 2004, 2008, 2012, 2016, 2020, 2024],
+    fallbackInsight: 'Central Seoul parking rose from ₩300/hour in 1995 to ₩3,000 today: 10×. Land values in Seoul have increased astronomically, making an empty parking space one of the most expensive surfaces to maintain. Private parking in Gangnam now exceeds ₩5,000/hour. The government has also deliberately raised public parking fees to discourage driving into the city center.'
+  },
+  {
+    id: 'bicycle',
+    category: 'transport',
+    item: 'Standard Bicycle (자전거)',
+    context: 'City commuter/utility bicycle, mid-range',
+    pastYear: 1990,
+    trend: [50000, 70000, 90000, 110000, 130000, 150000, 170000, 200000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'A standard commuter bicycle rose from ₩50,000 in 1990 to ₩200,000 today: 4×. Korean cycling transformed: once purely utilitarian, it became a weekend leisure industry in the 2010s. Post-COVID, bicycle demand surged globally and supply chains broke down, causing the single largest price jump in recent years. Entry-level bicycles now cost what a mid-range bike did a decade ago.'
+  },
+  {
+    id: 'moving',
+    category: 'transport',
+    item: 'Moving Service (포장이사)',
+    context: 'Small apartment within Seoul, professional packing',
+    pastYear: 1995,
+    trend: [100000, 150000, 200000, 280000, 350000, 450000, 550000, 700000],
+    trendYears: [1995, 2000, 2005, 2009, 2013, 2017, 2021, 2024],
+    fallbackInsight: 'Professional packing moves within Seoul rose from ₩100,000 in 1995 to ₩700,000 today: 7×. Moving is pure labor — packing, carrying, unloading — with a small vehicle cost. Every minimum wage increase passes directly to moving fees. Peak seasons (end of February, end of August, when leases renew) can push prices 2× higher than off-peak.'
+  },
+  {
+    id: 'domestic_flight',
+    category: 'transport',
+    item: 'Domestic Flight Seoul–Jeju',
+    context: 'One way, economy class, non-peak',
+    pastYear: 1995,
+    trend: [50000, 60000, 70000, 80000, 90000, 100000, 80000, 110000],
+    trendYears: [1995, 2000, 2005, 2008, 2012, 2016, 2020, 2024],
+    fallbackInsight: 'Seoul–Jeju flights rose from ₩50,000 in 1995 to ₩110,000 today: 2.2×. Budget carriers entered in 2005–2008 and dramatically suppressed prices — a rare case where new competition overrode inflation. Before LCCs, the route was a Korean Air/Asiana duopoly. The Jeju route is the world\'s busiest air corridor: pure volume drives efficiency and keeps prices lower than comparable distances elsewhere.'
+  },
+
+  // ── CULTURE (18 more) ────────────────────────────────────────
+  {
+    id: 'gym',
+    category: 'culture',
+    item: 'Gym Monthly Membership (헬스장)',
+    context: 'Standard fitness center, monthly fee',
+    pastYear: 1995,
+    trend: [30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000],
+    trendYears: [1995, 2000, 2005, 2009, 2013, 2017, 2021, 2024],
+    fallbackInsight: 'Gym memberships rose from ₩30,000/month in 1995 to ₩100,000 today: 3.3×. Gyms require large spaces in expensive urban real estate, heavy equipment maintenance, and staffing. Rent inflation in Korean cities hit gyms especially hard. The boom of low-cost 24-hour gyms in the 2020s created some downward pressure, but traditional full-service gyms continued raising prices to differentiate.'
+  },
+  {
+    id: 'haircut',
+    category: 'culture',
+    item: "Men's Haircut (남성 커트)",
+    context: 'Standard barbershop or hair salon',
+    pastYear: 1990,
+    trend: [2000, 3000, 5000, 7000, 8000, 10000, 12000, 15000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: "Men's haircuts rose from ₩2,000 in 1990 to ₩15,000 today: 7.5×. Pure labor service: price tracks wages almost directly. ₩1,000 barbershops survived into the 2000s; they are now museum pieces. Low-cost chain salons created a ₩10,000–12,000 floor rather than a ceiling. Premium studios in Hongdae or Apgujeong charge ₩30,000–50,000 for the same basic cut."
+  },
+  {
+    id: 'dry_cleaning',
+    category: 'culture',
+    item: 'Dry Cleaning — Business Suit',
+    context: 'Full suit (jacket + trousers), standard laundry',
+    pastYear: 1990,
+    trend: [3000, 5000, 7000, 9000, 11000, 13000, 15000, 18000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'Dry cleaning a suit rose from ₩3,000 in 1990 to ₩18,000 today: 6×. Chemical, labor, and energy costs all rose. But the category also shrank: remote work after COVID reduced suit usage dramatically. Dry cleaners in office districts report 30–40% volume drops since 2020 even as prices rose. Higher prices and fewer customers is a tough equilibrium.'
+  },
+  {
+    id: 'popcorn',
+    category: 'culture',
+    item: 'Movie Theater Popcorn',
+    context: 'Medium-size bucket, CGV or Lotte Cinema',
+    pastYear: 2000,
+    trend: [2500, 3000, 3500, 4000, 5000, 6000, 7000, 9000],
+    trendYears: [2000, 2003, 2006, 2009, 2012, 2016, 2020, 2024],
+    fallbackInsight: 'Movie theater popcorn rose from ₩2,500 in 2000 to ₩9,000 today: 3.6×. Cinemas intentionally subsidize ticket prices with concession margins — a global practice. Corn prices are relatively stable; what you pay for is the location and the captive audience. The popcorn combo (large + two drinks) at CGV can now exceed ₩22,000, rivaling the ticket price itself.'
+  },
+  {
+    id: 'everland',
+    category: 'culture',
+    item: 'Everland Theme Park Entry',
+    context: 'Standard adult day ticket',
+    pastYear: 1990,
+    trend: [7000, 15000, 21000, 28000, 36000, 46000, 54000, 72000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'Everland admission rose from ₩7,000 in 1990 to ₩72,000 today: over 10×. Samsung operates Everland and has invested billions in new rides, positioning it as a premium destination. Dynamic pricing (weekday vs. weekend vs. holiday) means the advertised price is rarely what you actually pay. A family outing that cost ₩30,000 total in 1990 now approaches ₩300,000.'
+  },
+  {
+    id: 'screen_golf',
+    category: 'culture',
+    item: 'Screen Golf (스크린골프)',
+    context: '18 holes, one person, standard facility',
+    pastYear: 2005,
+    trend: [15000, 20000, 25000, 30000, 35000, 40000],
+    trendYears: [2005, 2009, 2012, 2016, 2020, 2024],
+    fallbackInsight: 'Screen golf rose from ₩15,000 per round in 2005 to ₩40,000 today: 2.7× in under 20 years. Korea pioneered indoor simulator golf as an affordable alternative to expensive real courses. But rent and equipment costs are high, and rising minimum wages hit the attendant-heavy business model. Still, ₩40,000 for 18 simulated holes remains far cheaper than any real golf course.'
+  },
+  {
+    id: 'bowling',
+    category: 'culture',
+    item: 'Bowling (볼링)',
+    context: 'One game per person, standard bowling alley',
+    pastYear: 1995,
+    trend: [2000, 2500, 3000, 3500, 4000, 5000, 6000, 7000],
+    trendYears: [1995, 2000, 2004, 2008, 2012, 2016, 2020, 2024],
+    fallbackInsight: 'Bowling rose from ₩2,000/game in 1995 to ₩7,000 today: 3.5×. Bowling alleys are expensive to operate: large floorplates, lane maintenance, pin machines, and shoe rentals all add up. The industry peaked in the late 1990s and shrank as screen golf and PC cafés drew younger customers. Surviving alleys raised prices to compensate for lower volume.'
+  },
+  {
+    id: 'musical',
+    category: 'culture',
+    item: 'Musical Theater Ticket (뮤지컬)',
+    context: 'R-seat (preferred), mid-scale production',
+    pastYear: 2000,
+    trend: [30000, 40000, 60000, 80000, 100000, 120000, 150000],
+    trendYears: [2000, 2004, 2008, 2012, 2016, 2020, 2024],
+    fallbackInsight: "Korean musical theater tickets rose from ₩30,000 in 2000 to ₩150,000 today: 5×. Korea has become the world's third-largest musical theater market after Broadway and the West End. The influx of licensed Broadway shows demanded international royalty fees paid in dollars, exposing ticket prices to exchange rate risk. K-pop stars performing in musicals now drive premium pricing through fan demand."
+  },
+  {
+    id: 'idol_concert',
+    category: 'culture',
+    item: 'K-pop Concert Ticket',
+    context: 'Standard seat, domestic arena concert',
+    pastYear: 2000,
+    trend: [30000, 50000, 70000, 90000, 110000, 132000, 165000],
+    trendYears: [2000, 2004, 2008, 2012, 2016, 2020, 2024],
+    fallbackInsight: 'K-pop concert tickets rose from ₩30,000 in 2000 to ₩165,000 today: 5.5×. The Korean Wave transformed idol concerts from domestic entertainment into global luxury events. BTS, BLACKPINK, and TWICE sell out 70,000-seat stadiums worldwide, and agencies followed the Western model of dynamic pricing. Fan club pre-sale tiers and VIP packages can push total spend to ₩500,000+ per event.'
+  },
+  {
+    id: 'netflix',
+    category: 'culture',
+    item: 'Netflix Subscription',
+    context: 'Standard plan, Korea pricing',
+    pastYear: 2016,
+    trend: [9900, 10900, 12000, 13500, 17000],
+    trendYears: [2016, 2018, 2020, 2022, 2024],
+    fallbackInsight: 'Netflix in Korea rose from ₩9,900/month in 2016 to ₩17,000 today: 1.7× in 8 years. Seemingly slow, but Netflix spent billions producing Korean content (Squid Game, Hellbound, The Glory) that pulled global subscriptions. The 2023 password-sharing crackdown added millions of paid subscribers. Korean consumers now generate premium content they then pay to watch — a curious loop where their own stories come back at a price.'
+  },
+  {
+    id: 'youtube_premium',
+    category: 'culture',
+    item: 'YouTube Premium (월정액)',
+    context: 'Individual subscription, Korean pricing',
+    pastYear: 2018,
+    trend: [7900, 8690, 10450, 14900],
+    trendYears: [2018, 2020, 2022, 2024],
+    fallbackInsight: 'YouTube Premium in Korea rose from ₩7,900 in 2018 to ₩14,900 in 2024: nearly doubling in 6 years. Google raised Korean prices 70% in a single step in 2023 — one of the largest single-year jumps in this entire game. Korea had been priced unusually low relative to Western markets, and Google corrected this aggressively. Korean consumers, deeply habituated to ad-free YouTube, largely absorbed the shock rather than cancel.'
+  },
+  {
+    id: 'public_pool',
+    category: 'culture',
+    item: 'Public Swimming Pool (수영장)',
+    context: 'Per session entry, municipal facility',
+    pastYear: 1995,
+    trend: [1000, 1500, 2000, 2500, 3000, 4000, 5000, 6000],
+    trendYears: [1995, 2000, 2004, 2008, 2012, 2016, 2020, 2024],
+    fallbackInsight: 'Public pool entry rose from ₩1,000 in 1995 to ₩6,000 today: 6×. Municipal pools are subsidized but not free from cost pressures: water, chemicals, heating, and lifeguard wages all rose. Summer queues at public pools — often the only affordable option for urban families — reflect how pricing shapes access to basic recreation.'
+  },
+  {
+    id: 'billiards',
+    category: 'culture',
+    item: 'Billiard Hall (당구장)',
+    context: 'Per hour, standard table',
+    pastYear: 1995,
+    trend: [1500, 2000, 2500, 3000, 3500, 4000, 5000, 6000],
+    trendYears: [1995, 2000, 2004, 2008, 2012, 2016, 2020, 2024],
+    fallbackInsight: 'Billiard halls rose from ₩1,500/hour in 1995 to ₩6,000 today: 4×. Billiards was a working-class leisure staple from the 1970s through 2000s. The industry slowly declined as younger demographics gravitated toward PC cafés and screen golf. Surviving halls raised prices to offset lower foot traffic. The ₩1,500 game is history.'
+  },
+  {
+    id: 'waterpark',
+    category: 'culture',
+    item: 'Waterpark Entry (워터파크)',
+    context: 'Caribbean Bay, standard adult day ticket',
+    pastYear: 1996,
+    trend: [10000, 15000, 22000, 28000, 38000, 48000, 55000, 65000],
+    trendYears: [1996, 2000, 2005, 2008, 2012, 2016, 2020, 2024],
+    fallbackInsight: "Caribbean Bay waterpark rose from ₩10,000 in 1996 to ₩65,000 today: 6.5×. Korea's largest waterpark opened as an accessible summer destination. Rising energy costs (heating wave pools year-round, water treatment) and Samsung's investment in premium attractions drove price increases. A family of four in 1996 entered for ₩40,000; today that costs ₩260,000 before food or lockers."
+  },
+  {
+    id: 'photo_booth',
+    category: 'culture',
+    item: 'Photo Booth Strip (인생네컷)',
+    context: '4-frame photo strip, self-service booth',
+    pastYear: 2017,
+    trend: [3000, 4000, 5000, 6000, 7000],
+    trendYears: [2017, 2019, 2020, 2022, 2024],
+    fallbackInsight: "Photo booth strips launched around 2017 at ₩3,000 and rose to ₩7,000 by 2024: 2.3× in 7 years. A uniquely Korean Gen Z phenomenon, the format spread globally through K-pop fan culture. Ink, paper, and machine maintenance costs are modest; the bigger driver is brand expansion and premium options (filters, backgrounds, sticker sets). It became a staple of shopping malls, cafés, and tourist spots worldwide."
+  },
+  {
+    id: 'escape_room',
+    category: 'culture',
+    item: 'Escape Room (방탈출)',
+    context: 'Per person, standard room (team of 4)',
+    pastYear: 2014,
+    trend: [15000, 18000, 20000, 22000, 25000],
+    trendYears: [2014, 2016, 2018, 2021, 2024],
+    fallbackInsight: "Escape rooms rose from ₩15,000/person in 2014 to ₩25,000 today: 1.7× in 10 years. Korea pioneered the modern escape room format and exported it globally. Operators continuously invest in higher-tech, more theatrical room designs — hydraulic doors, actor-in-room scenarios, projections. These capital investments justify price increases. Ironically, the higher the quality, the more it costs even though the time per experience barely changes."
+  },
+  {
+    id: 'soccer',
+    category: 'culture',
+    item: 'K-League Soccer Ticket',
+    context: 'Standard seat (일반석), K League 1 match',
+    pastYear: 2000,
+    trend: [3000, 5000, 7000, 9000, 10000, 12000, 14000],
+    trendYears: [2000, 2005, 2009, 2012, 2016, 2019, 2024],
+    fallbackInsight: "K-League soccer tickets rose from ₩3,000 in 2000 to ₩14,000 today: 4.7×. Korean professional soccer has grown alongside the national team's 2002 World Cup semi-final legacy. Stadium improvements, imported foreign players, and broadcast deals pushed operating costs up. But baseball's 2023–2024 boom left K-League in its shadow, and clubs keep prices accessible to fill seats."
+  },
+  {
+    id: 'art_exhibition',
+    category: 'culture',
+    item: 'Special Art Exhibition (미술 특별전)',
+    context: 'Major gallery or museum, adult entry',
+    pastYear: 1995,
+    trend: [2000, 3000, 5000, 7000, 9000, 12000, 15000, 18000],
+    trendYears: [1995, 2000, 2005, 2009, 2012, 2016, 2020, 2024],
+    fallbackInsight: 'Major art exhibition tickets rose from ₩2,000 in 1995 to ₩18,000 today: 9×. International blockbusters (Monet in Seoul, Yayoi Kusama) now command ₩25,000+. The post-COVID "Art in Culture" trend brought younger audiences but also higher production costs: immersive lighting, insurance for priceless works, and competition with digital entertainment all pushed prices up.'
+  },
+
+  // ── TECH (14 more) ──────────────────────────────────────────
+  {
+    id: 'smartphone_midrange',
+    category: 'tech',
+    item: 'Mid-range Smartphone (중급 스마트폰)',
+    context: 'Galaxy A-series or equivalent, launch price',
+    pastYear: 2012,
+    trend: [300000, 280000, 260000, 300000, 350000, 400000],
+    trendYears: [2012, 2015, 2017, 2019, 2022, 2024],
+    fallbackInsight: "Mid-range smartphones started around ₩300,000 in 2012 and have risen to ₩400,000 today: 1.3×. Prices dipped first as Chinese competitors forced Samsung to cut margins. Then component costs rebounded. ₩400,000 in 2024 buys a phone far more powerful than any 2012 flagship — value per won increased even as the price crept up."
+  },
+  {
+    id: 'tablet',
+    category: 'tech',
+    item: 'Tablet PC (태블릿)',
+    context: 'Entry-level model, Galaxy Tab or iPad (Wi-Fi)',
+    pastYear: 2011,
+    trend: [500000, 450000, 400000, 380000, 400000, 450000],
+    trendYears: [2011, 2013, 2015, 2017, 2020, 2024],
+    fallbackInsight: 'Entry-level tablets dropped from ₩500,000 in 2011 to ₩380,000 by 2017, then rose back to ₩450,000 — a net decline of 10%. Competition and manufacturing scale drove prices down initially, but pandemic-driven demand and chip shortages reversed the trend. Despite similar nominal prices, the product improved enormously: screen quality, battery life, and processing power each multiplied many times over.'
+  },
+  {
+    id: 'smartwatch',
+    category: 'tech',
+    item: 'Smartwatch (스마트워치)',
+    context: 'Galaxy Watch basic model, launch price',
+    pastYear: 2014,
+    trend: [350000, 320000, 330000, 350000, 350000],
+    trendYears: [2014, 2016, 2018, 2021, 2024],
+    fallbackInsight: 'Galaxy Watch prices have stayed remarkably flat at ₩330,000–350,000 since 2014. This is unusual: most tech items either fall (commoditization) or rise (premium positioning). Samsung has deliberately held the entry point steady while adding features, using the watch as an ecosystem anchor to sell Galaxy phones. The Apple Watch effect — defining a ₩400,000+ ceiling — helped anchor the market.'
+  },
+  {
+    id: 'game_console',
+    category: 'tech',
+    item: 'Nintendo Handheld Console',
+    context: 'Launch price of each new generation',
+    pastYear: 1990,
+    trend: [50000, 99000, 149000, 250000, 220000, 360000],
+    trendYears: [1990, 2001, 2004, 2011, 2019, 2022],
+    fallbackInsight: "Nintendo handhelds rose from the Game Boy at ₩50,000 in 1990 to the Switch OLED at ₩360,000 in 2022: 7.2×. But each generation represented a dramatic leap in capability. The Switch is essentially a home console that fits in your pocket. The category also benefited from the Pokémon GO cultural moment and the COVID home entertainment boom. A toy became an entertainment platform."
+  },
+  {
+    id: 'printer',
+    category: 'tech',
+    item: 'Home Inkjet Printer (프린터)',
+    context: 'Standard home model, HP or Samsung',
+    pastYear: 1995,
+    trend: [200000, 150000, 100000, 80000, 70000, 80000, 90000],
+    trendYears: [1995, 2000, 2005, 2009, 2013, 2018, 2024],
+    fallbackInsight: 'Home printers dropped from ₩200,000 in 1995 to ₩70,000 at their cheapest (2013), then crept back to ₩90,000. The falling price was a trap: manufacturers subsidize hardware to sell ink cartridges at enormous margins — ₩50,000 cartridges that cost ₩3,000 to make. Koreans print far less than a decade ago, yet ink cartridges remain ludicrously expensive.'
+  },
+  {
+    id: 'air_purifier',
+    category: 'tech',
+    item: 'Air Purifier (공기청정기)',
+    context: 'Mid-range model, ~20-pyeong coverage',
+    pastYear: 2000,
+    trend: [300000, 250000, 200000, 200000, 250000, 300000, 350000],
+    trendYears: [2000, 2004, 2008, 2012, 2016, 2020, 2024],
+    fallbackInsight: "Air purifiers have stayed around ₩250,000–350,000 since 2000, with prices dipping in the 2010s before recovering. The hidden cost story: HEPA filter replacements run ₩50,000–100,000/year. The category exploded after 2016 when fine particle (미세먼지) crises made air purifiers a household necessity. Dyson and LG now compete in a premium segment above ₩800,000."
+  },
+  {
+    id: 'robot_vacuum',
+    category: 'tech',
+    item: 'Robot Vacuum (로봇청소기)',
+    context: 'Entry-level model, standard brand',
+    pastYear: 2010,
+    trend: [500000, 400000, 300000, 250000, 250000, 300000],
+    trendYears: [2010, 2013, 2016, 2018, 2020, 2024],
+    fallbackInsight: 'Robot vacuums dropped from ₩500,000 in 2010 to ₩250,000 by 2018 — then prices stabilized. Chinese manufacturers (Roborock, Xiaomi) commoditized the category, forcing Samsung and LG to compete aggressively. Higher-end models with mop functions and self-emptying bases now cost ₩700,000–1,500,000. Cheap became basic; basic became premium. The market split into two tiers.'
+  },
+  {
+    id: 'smartphone_plan',
+    category: 'tech',
+    item: 'Mobile Data Plan (스마트폰 요금제)',
+    context: 'Mid-range monthly plan, major carrier (SKT/KT/LGU+)',
+    pastYear: 2000,
+    trend: [40000, 45000, 55000, 60000, 55000, 55000, 55000],
+    trendYears: [2000, 2004, 2010, 2012, 2015, 2020, 2024],
+    fallbackInsight: 'Mobile plans rose from ₩40,000 in 2000 to a current mid-range of ₩55,000/month: 1.4×. For a communication essential, this is remarkably stable — but the product changed entirely. ₩40,000 in 2000 bought voice calls; ₩55,000 today buys unlimited 5G data. Government price regulation on Korean telcos has been consistent and effective, keeping the baseline relatively flat.'
+  },
+  {
+    id: 'electric_fan',
+    category: 'tech',
+    item: 'Electric Fan (선풍기)',
+    context: 'Standard floor fan, major brand',
+    pastYear: 1990,
+    trend: [20000, 25000, 30000, 35000, 40000, 45000, 50000, 55000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'Electric fans rose from ₩20,000 in 1990 to ₩55,000 today: 2.75×. One of the slower inflation rates for a physical product in this game. Manufacturing moved to China, keeping costs down. Korean summers have also gotten hotter due to climate change, increasing demand and justifying modest premiums for quieter, more energy-efficient models.'
+  },
+  {
+    id: 'refrigerator',
+    category: 'tech',
+    item: 'Refrigerator (냉장고)',
+    context: 'Mid-range 300L model, major brand',
+    pastYear: 1990,
+    trend: [400000, 500000, 600000, 700000, 800000, 900000, 1000000, 1200000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'A mid-range refrigerator rose from ₩400,000 in 1990 to ₩1,200,000 today: 3×. This is moderate growth for a major appliance over 34 years. But average refrigerator size grew from 200L to 300L+, and features expanded to include French door designs, ice makers, and smart home connectivity. Premium Samsung and LG models now exceed ₩5,000,000 for the family hub flagship.'
+  },
+  {
+    id: 'washing_machine',
+    category: 'tech',
+    item: 'Washing Machine (세탁기)',
+    context: 'Drum-type, 7–8kg, mid-range brand',
+    pastYear: 1995,
+    trend: [400000, 500000, 600000, 700000, 800000, 900000, 1000000],
+    trendYears: [1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'Drum washing machines rose from ₩400,000 in 1995 to ₩1,000,000 today: 2.5×. The shift from top-loading to drum-type in the 2000s was itself a significant price jump. Steam washing, AI load sensing, and energy efficiency certification drove the premium segment higher. But Chinese brands now offer entry-level options at ₩300,000–400,000, creating a bifurcated market.'
+  },
+  {
+    id: 'air_conditioner',
+    category: 'tech',
+    item: 'Wall-mounted Air Conditioner (에어컨)',
+    context: 'Standard split type, ~10-pyeong room',
+    pastYear: 1990,
+    trend: [500000, 600000, 700000, 800000, 900000, 1000000, 1200000, 1400000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'Wall-mounted air conditioners rose from ₩500,000 in 1990 to ₩1,400,000 today: 2.8×. Korean summers getting hotter has driven AC from a luxury to a necessity — over 90% of Korean households now own one. The price rise partly reflects technology improvements (inverter compressors, WiFi control) but also brand premiums. Installation adds another ₩200,000–300,000 on top.'
+  },
+  {
+    id: 'microwave',
+    category: 'tech',
+    item: 'Microwave Oven (전자레인지)',
+    context: 'Standard home model, ~20L',
+    pastYear: 1990,
+    trend: [100000, 120000, 100000, 80000, 70000, 70000, 80000, 90000],
+    trendYears: [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024],
+    fallbackInsight: 'Microwaves actually got cheaper: from ₩100,000 in 1990 to ₩90,000 today, with a dip to ₩70,000 in the 2010s. Manufacturing moved to China and economies of scale drove costs down sharply. The microwave is one of very few items in this game that is nominally cheaper than 30 years ago. The commodity trap set in; the premium segment shifted to oven-microwave combos at ₩300,000+.'
+  },
+  {
+    id: 'external_hdd',
+    category: 'tech',
+    item: 'External Hard Drive (외장하드) — 1TB',
+    context: 'Standard brand, retail price',
+    pastYear: 2008,
+    trend: [200000, 120000, 80000, 60000, 50000, 55000],
+    trendYears: [2008, 2011, 2013, 2016, 2020, 2024],
+    fallbackInsight: 'A 1TB external hard drive dropped from ₩200,000 in 2008 to ₩50,000 in 2020, then crept up slightly to ₩55,000: 72% cheaper in 16 years — the sharpest price deflation in this game. The 2011 Thailand floods briefly spiked prices before recovery. Cloud storage (Google Drive, Naver MYBOX) now competes directly, meaning the HDD market faces both cost deflation and demand replacement simultaneously.'
   }
 ];
 
@@ -299,6 +1207,61 @@ async function fetchInsight(prompt, fallback, targetElement) {
 }
 
 /* ============================================================
+   STATS - localStorage persistence
+============================================================ */
+
+const STATS_KEY = 'priceMemoryStats';
+
+function saveGameResult(category, avgError) {
+  const history = JSON.parse(localStorage.getItem(STATS_KEY) || '[]');
+  history.push({ date: new Date().toISOString().slice(0, 10), category, avgError });
+  if (history.length > 50) history.splice(0, history.length - 50);
+  localStorage.setItem(STATS_KEY, JSON.stringify(history));
+}
+
+function showStatsScreen() {
+  showScreen('screen-stats');
+  const history = JSON.parse(localStorage.getItem(STATS_KEY) || '[]');
+
+  // Overview
+  const games = history.length;
+  const overallAvg = games ? Math.round(history.reduce((s, r) => s + r.avgError, 0) / games) : null;
+  document.getElementById('st-games').textContent = games || '--';
+  document.getElementById('st-avg').textContent = overallAvg !== null ? overallAvg + '%' : '--';
+
+  // By category
+  const catEl = document.getElementById('st-categories');
+  catEl.innerHTML = '';
+  ['all', 'food', 'transport', 'culture', 'tech'].forEach(cat => {
+    const rows = history.filter(r => r.category === cat);
+    if (!rows.length) return;
+    const avg = Math.round(rows.reduce((s, r) => s + r.avgError, 0) / rows.length);
+    const div = document.createElement('div');
+    div.className = 'history-row';
+    div.innerHTML = `<span>${cat.charAt(0).toUpperCase() + cat.slice(1)}</span><span>${avg}% avg · ${rows.length} game${rows.length > 1 ? 's' : ''}</span>`;
+    catEl.appendChild(div);
+  });
+  if (!catEl.children.length) {
+    catEl.innerHTML = '<p class="stats-empty">No games yet.</p>';
+  }
+
+  // Recent games
+  const histEl = document.getElementById('st-history');
+  histEl.innerHTML = '';
+  const recent = history.slice(-5).reverse();
+  if (!recent.length) {
+    histEl.innerHTML = '<p class="stats-empty">No games yet.</p>';
+  } else {
+    recent.forEach(r => {
+      const div = document.createElement('div');
+      div.className = 'history-row';
+      div.innerHTML = `<span>${r.date} · ${r.category}</span><span>${r.avgError}% error</span>`;
+      histEl.appendChild(div);
+    });
+  }
+}
+
+/* ============================================================
    GAME STATE
 ============================================================ */
 
@@ -326,6 +1289,9 @@ function showScreen(id) {
 ============================================================ */
 
 function initStartScreen() {
+  // Stats button
+  document.getElementById('stats-btn').addEventListener('click', showStatsScreen);
+
   // Restore saved API key for this session
   const saved = sessionStorage.getItem('priceMemoryApiKey');
   if (saved) {
@@ -571,6 +1537,9 @@ function showEndScreen() {
   // Questions within 20% accuracy
   const within20 = results.filter(r => r.errorPct <= 20).length;
 
+  // Save to history
+  saveGameResult(state.selectedCategory, avgError);
+
   // Skill title
   document.getElementById('e-skill-title').textContent = getSkillTitle(avgError);
 
@@ -628,6 +1597,65 @@ function initEndScreen() {
   });
 }
 
+function initStatsScreen() {
+  document.getElementById('stats-back-btn').addEventListener('click', () => {
+    showScreen('screen-start');
+  });
+
+  // Restore saved name
+  const savedName = localStorage.getItem('priceMemoryName') || '';
+  document.getElementById('stats-name').value = savedName;
+
+  document.getElementById('stats-save-name-btn').addEventListener('click', () => {
+    const name = document.getElementById('stats-name').value.trim();
+    if (name) localStorage.setItem('priceMemoryName', name);
+    else localStorage.removeItem('priceMemoryName');
+  });
+
+  document.getElementById('stats-export-btn').addEventListener('click', () => {
+    const data = {
+      name: localStorage.getItem('priceMemoryName') || '',
+      history: JSON.parse(localStorage.getItem(STATS_KEY) || '[]')
+    };
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'price-memory-progress.json';
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  document.getElementById('stats-import-input').addEventListener('change', e => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = ev => {
+      try {
+        const data = JSON.parse(ev.target.result);
+        if (data.history) localStorage.setItem(STATS_KEY, JSON.stringify(data.history));
+        if (data.name) {
+          localStorage.setItem('priceMemoryName', data.name);
+          document.getElementById('stats-name').value = data.name;
+        }
+        showStatsScreen();
+      } catch {
+        alert('Invalid file.');
+      }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  });
+
+  document.getElementById('stats-reset-btn').addEventListener('click', () => {
+    if (!confirm('Reset all progress? This cannot be undone.')) return;
+    localStorage.removeItem(STATS_KEY);
+    localStorage.removeItem('priceMemoryName');
+    document.getElementById('stats-name').value = '';
+    showStatsScreen();
+  });
+}
+
 /* ============================================================
    RESIZE HANDLER: redraw chart when window resizes
 ============================================================ */
@@ -652,4 +1680,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initGameScreen();
   initResultScreen();
   initEndScreen();
+  initStatsScreen();
 });

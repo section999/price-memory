@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Price Memory: Korean Inflation Game</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
 </head>
@@ -46,8 +47,8 @@
 
         <!-- Start button -->
         <button id="start-btn" class="btn btn-primary btn-large">Start Game →</button>
+        <button id="stats-btn" class="btn btn-ghost btn-large">View Stats →</button>
 
-        <p class="start-note">5 questions per round · AI explains each answer</p>
       </section>
     </div>
   </div>
@@ -199,6 +200,49 @@
         </div>
 
         <button id="play-again-btn" class="btn btn-primary btn-large">Play Again →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SCREEN 5: STATS
+  ============================================================ -->
+  <div id="screen-stats" class="screen">
+    <div class="container">
+      <div class="card">
+        <h2>Your Stats</h2>
+
+        <div class="score-grid" style="margin-top: calc(var(--space) * 3)">
+          <div class="score-cell">
+            <div class="score-value" id="st-games">--</div>
+            <div class="score-label">Games Played</div>
+          </div>
+          <div class="score-cell">
+            <div class="score-value" id="st-avg">--</div>
+            <div class="score-label">Avg Error</div>
+          </div>
+        </div>
+
+        <div class="section-label">By Category</div>
+        <div id="st-categories"></div>
+
+        <div class="section-label">Recent Games</div>
+        <div id="st-history"></div>
+
+        <div class="section-label">Save Progress</div>
+        <input id="stats-name" type="text" class="text-input" placeholder="Your name" autocomplete="off" />
+        <button id="stats-save-name-btn" class="btn btn-ghost btn-small">Save Name</button>
+
+        <button id="stats-export-btn" class="btn btn-ghost btn-small" style="margin-top: calc(var(--space) * 2)">⬇ Export Progress</button>
+        <label class="btn btn-ghost btn-small" style="margin-top: calc(var(--space) * 1); cursor: pointer;">
+          ⬆ Import Progress
+          <input id="stats-import-input" type="file" accept=".json" style="display:none" />
+        </label>
+        <button id="stats-reset-btn" class="btn btn-ghost btn-small stats-reset">⚠ Reset Progress</button>
+
+        <p class="input-hint" style="margin-top: calc(var(--space) * 2)">Progress is stored in this browser only. Use Export / Import to move it across devices.</p>
+
+        <button id="stats-back-btn" class="btn btn-primary btn-large">← Back</button>
       </div>
     </div>
   </div>
