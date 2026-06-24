@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Price Memory: Korean Inflation Game</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ============================================================
+       SCREEN 1: START
+  ============================================================ -->
+  <div id="screen-start" class="screen active">
+    <div class="container">
+      <header class="start-header">
+        <h1 class="title">Price Memory</h1>
+        <p class="subtitle">How well do you know Korea's 30 years of inflation?</p>
+      </header>
+
+      <section class="start-card card">
+
+        <!-- Category filter -->
+        <div class="section-label">Select Category</div>
+        <div id="category-filters" class="filter-group" role="group" aria-label="Category filter">
+          <button class="filter-btn active" data-category="all">All</button>
+          <button class="filter-btn" data-category="food">Food</button>
+          <button class="filter-btn" data-category="transport">Transport</button>
+          <button class="filter-btn" data-category="culture">Culture</button>
+          <button class="filter-btn" data-category="tech">Tech</button>
+        </div>
+
+        <!-- API key input -->
+        <div class="section-label">Anthropic API Key <span class="label-optional">(optional, enables AI explanations)</span></div>
+        <input
+          id="api-key-input"
+          type="password"
+          class="text-input"
+          placeholder="sk-ant-..."
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <p class="input-hint">Stored in sessionStorage only. Never sent anywhere except api.anthropic.com.</p>
+
+        <!-- Start button -->
+        <button id="start-btn" class="btn btn-primary btn-large">Start Game →</button>
+
+        <p class="start-note">5 questions per round · AI explains each answer</p>
+      </section>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SCREEN 2: GAME
+  ============================================================ -->
+  <div id="screen-game" class="screen">
+    <div class="container">
+
+      <!-- Progress dots -->
+      <div id="progress-dots" class="progress-dots" role="progressbar" aria-label="Question progress">
+        <!-- Dots injected by JS -->
+      </div>
+
+      <!-- Question card -->
+      <div id="question-card" class="card question-card">
+
+        <!-- Item info -->
+        <div class="question-meta">
+          <span id="q-category" class="badge badge-category"></span>
+        </div>
+        <h2 id="q-item" class="q-item-name"></h2>
+        <p id="q-context" class="q-context"></p>
+
+        <!-- Year badges -->
+        <div class="year-bridge">
+          <span id="q-past-year" class="year-badge year-past"></span>
+          <span class="year-arrow">→</span>
+          <span id="q-now-year" class="year-badge year-now"></span>
+        </div>
+
+        <!-- Past price -->
+        <div class="past-price-block">
+          <span class="past-price-label">Price in <span id="q-past-year-label"></span></span>
+          <span id="q-past-price" class="past-price-value"></span>
+        </div>
+
+        <!-- Canvas bar chart -->
+        <div class="chart-wrapper">
+          <canvas id="trend-chart" width="600" height="140" aria-label="Price trend chart"></canvas>
+        </div>
+
+        <!-- Guess input -->
+        <label for="guess-input" class="section-label">Your guess in ₩ (KRW)</label>
+        <input
+          id="guess-input"
+          type="number"
+          class="text-input"
+          placeholder="e.g. 15000"
+          min="1"
+          step="1"
+        />
+        <div id="guess-error" class="inline-error" role="alert" aria-live="polite"></div>
+
+        <button id="submit-btn" class="btn btn-primary btn-large">Submit →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SCREEN 3: RESULT
+  ============================================================ -->
+  <div id="screen-result" class="screen">
+    <div class="container">
+      <div class="card result-card">
+
+        <!-- Error percentage + label -->
+        <div class="result-header">
+          <span id="r-error-pct" class="error-pct"></span>
+          <span id="r-accuracy-label" class="accuracy-label"></span>
+        </div>
+
+        <!-- Guess vs real comparison -->
+        <div class="compare-grid">
+          <div class="compare-cell">
+            <div class="compare-sublabel">Your Guess</div>
+            <div id="r-user-guess" class="compare-value guess-value"></div>
+          </div>
+          <div class="compare-cell">
+            <div class="compare-sublabel">Real Price (<span id="r-now-year"></span>)</div>
+            <div id="r-real-price" class="compare-value real-value"></div>
+          </div>
+        </div>
+
+        <!-- Multiplier line -->
+        <div class="multiplier-line">
+          <span id="r-past-display" class="multiplier-past"></span>
+          <span class="multiplier-arrow">→</span>
+          <span id="r-multiplier" class="multiplier-badge"></span>
+        </div>
+
+        <!-- Proportional bar visual -->
+        <div class="bar-visual-wrap">
+          <div class="bar-visual-label">Past</div>
+          <div class="bar-track">
+            <div id="bar-past" class="bar-fill bar-fill-past"></div>
+          </div>
+          <div class="bar-visual-label">Now</div>
+          <div class="bar-track">
+            <div id="bar-now" class="bar-fill bar-fill-now"></div>
+          </div>
+        </div>
+
+        <!-- AI explanation box -->
+        <div class="ai-box">
+          <div class="ai-box-label">Why did this happen?</div>
+          <p id="r-insight" class="ai-text">Analyzing...</p>
+        </div>
+
+        <button id="next-btn" class="btn btn-primary btn-large">Next Question →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SCREEN 4: END
+  ============================================================ -->
+  <div id="screen-end" class="screen">
+    <div class="container">
+      <div class="card end-card">
+
+        <h2 id="e-skill-title" class="skill-title"></h2>
+
+        <!-- 2x2 score grid -->
+        <div class="score-grid">
+          <div class="score-cell">
+            <div class="score-value" id="e-avg-error"></div>
+            <div class="score-label">Average Error</div>
+          </div>
+          <div class="score-cell">
+            <div class="score-value" id="e-best-pct"></div>
+            <div class="score-label">Best Answer</div>
+          </div>
+          <div class="score-cell">
+            <div class="score-value" id="e-within-20"></div>
+            <div class="score-label">Within 20%</div>
+          </div>
+          <div class="score-cell">
+            <div class="score-value" id="e-total"></div>
+            <div class="score-label">Questions</div>
+          </div>
+        </div>
+
+        <!-- AI summary box -->
+        <div class="ai-box">
+          <div class="ai-box-label">Your Inflation Intuition</div>
+          <p id="e-summary" class="ai-text">Analyzing...</p>
+        </div>
+
+        <button id="play-again-btn" class="btn btn-primary btn-large">Play Again →</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
