@@ -1,0 +1,4 @@
+site: price-memory
+
+build:
+  output: .
