@@ -80,9 +80,9 @@ Works in any modern browser (Chrome, Firefox, Safari, Edge). No frameworks, no b
 
 ## License
 
-Copyright &copy; 2014 freeCodeCamp.org
+Copyright &copy; 2014 [freeCodeCamp.org](https://www.freecodecamp.org)
 
 The content of this repository is bound by the following licenses:
 
-- The computer software is licensed under the [BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause) license.
-- The curriculum content is copyright &copy; 2014 freeCodeCamp.org
+- The computer software is licensed under the [BSD-3-Clause](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/LICENSE.md) license.
+- The curriculum content is copyright &copy; 2014 [freeCodeCamp.org](https://www.freecodecamp.org)
