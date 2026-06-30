@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Price Memory: Inflation Game</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/style.css" />
   <link rel="icon" href="favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet" />
@@ -38,7 +38,10 @@
           <button id="start-btn" class="btn btn-primary btn-large">Start Game</button>
           <button id="stats-btn" class="btn btn-ghost btn-large">View Stats</button>
         </div>
-        <p class="donate-hint"><a href="https://www.freecodecamp.org/donate/" target="_blank" rel="noopener noreferrer" class="donate-link">❤️</a> Support freeCodeCamp</p>
+        <div class="donate-row">
+          <a href="https://www.freecodecamp.org/donate/" target="_blank" rel="noopener noreferrer" class="donate-link">❤️</a>
+          <button class="theme-toggle" aria-label="Toggle light mode">☀️</button>
+        </div>
 
         <!-- API key input (collapsible) -->
         <button id="api-key-toggle" class="api-key-toggle">▶ Enable explanations (Optional)</button>
@@ -211,7 +214,10 @@
 
         <button id="play-again-btn" class="btn btn-primary btn-large">Play Again</button>
         <button id="end-home-btn" class="btn btn-ghost btn-large">Home</button>
-        <p class="donate-hint">Enjoyed the game? <a href="https://www.freecodecamp.org/donate/" target="_blank" rel="noopener noreferrer" class="donate-link">❤️</a> Support freeCodeCamp</p>
+        <div class="donate-row">
+          <a href="https://www.freecodecamp.org/donate/" target="_blank" rel="noopener noreferrer" class="donate-link">❤️</a>
+          <button class="theme-toggle" aria-label="Toggle light mode">☀️</button>
+        </div>
       </div>
     </div>
   </div>
@@ -264,6 +270,6 @@
     </div>
   </div>
 
-  <script src="app.js"></script>
+  <script src="assets/app.js"></script>
 </body>
 </html>
