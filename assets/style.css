@@ -929,21 +929,86 @@ p {
   }
 }
 
-.donate-hint {
+.donate-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--space) * 1.5);
   margin-top: calc(var(--space) * 2);
-  text-align: center;
-  font-size: 0.85rem;
-  color: var(--text-secondary, #888);
 }
 
 .donate-link {
   text-decoration: none;
   font-size: 1.1rem;
-  vertical-align: middle;
+  line-height: 1;
   transition: transform 0.2s ease;
   display: inline-block;
 }
 
 .donate-link:hover {
   transform: scale(1.3);
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  padding: calc(var(--space) * 0.4) calc(var(--space) * 0.75);
+  transition: transform 0.2s ease;
+  color: var(--text-muted);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.15);
+}
+
+/* ============================================================
+   LIGHT MODE
+   Colors: freeCodeCamp design style guide only
+   https://design-style-guide.freecodecamp.org/
+============================================================ */
+body.light-mode {
+  --bg-primary:     #f5f6f7;  /* gray-05  */
+  --bg-secondary:   #ffffff;  /* gray-00  */
+  --bg-card:        #ffffff;  /* gray-00  */
+  --bg-subtle:      #d0d0d5;  /* gray-15  */
+  --text-primary:   #0a0a23;  /* gray-90  */
+  --text-secondary: #1b1b32;  /* gray-85  */
+  --text-muted:     #2a2a40;  /* gray-80  */
+  --accent-purple:  #5a01a7;  /* Dark Purple (for light bg) */
+  --accent-yellow:  #4d3800;  /* Dark Yellow (for light bg) */
+  --accent-blue:    #002ead;  /* Dark Blue  (for light bg) */
+  --accent-green:   #00471b;  /* Dark Green (for light bg) */
+  --accent-red:     #ad0000;
+}
+
+/* Primary button keeps bright yellow bg with forced dark text */
+body.light-mode .btn-primary {
+  background-color: #f1be32;
+  border-color: #f1be32;
+  color: #0a0a23;
+}
+
+body.light-mode .btn-primary:hover,
+body.light-mode .btn-primary:focus {
+  background-color: #ffd966;
+  border-color: #ffd966;
+}
+
+/* Active filter badge keeps bright yellow bg */
+body.light-mode .filter-btn.active {
+  background-color: rgba(241, 190, 50, 0.18);
+}
+
+/* Multiplier badge keeps bright yellow bg */
+body.light-mode .multiplier-badge {
+  background-color: rgba(77, 56, 0, 0.08);
+}
+
+/* Card border more visible on light bg */
+body.light-mode .card {
+  border-color: #d0d0d5;
+  box-shadow: 0 1px 4px rgba(10, 10, 35, 0.08);
 }

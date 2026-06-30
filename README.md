@@ -38,4 +38,8 @@ Copyright © 2014 [freeCodeCamp.org](https://www.freecodecamp.org/)
 The content of this repository is bound by the following licenses:
 
 - The computer software is licensed under the [BSD-3-Clause](https://github.com/freeCodeCamp/freeCodeCamp/blob/main/LICENSE.md) license.
+<<<<<<< Updated upstream
 - The curriculum content is copyright © 2014 [freeCodeCamp.org](https://www.freecodecamp.org/)
+=======
+- The curriculum content is copyright &copy; 2014 [freeCodeCamp.org](https://www.freecodecamp.org)
+>>>>>>> Stashed changes

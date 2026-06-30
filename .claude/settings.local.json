@@ -4,7 +4,8 @@
       "WebFetch(domain:omotenashi-training.freecode.camp)",
       "Bash(curl:*)",
       "Bash(ls:*)",
-      "Bash(node:*)"
+      "Bash(node:*)",
+      "WebFetch(domain:design-style-guide.freecodecamp.org)"
     ]
   }
 }

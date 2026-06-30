@@ -2165,11 +2165,12 @@ function drawBarChart(canvas, trend, trendYears) {
     const isLast = i === n - 1;
 
     // Bar fill
-    ctx.fillStyle = isLast ? '#f1be32' : '#3b3b4f';
+    const isLight = document.body.classList.contains('light-mode');
+    ctx.fillStyle = isLast ? '#f1be32' : (isLight ? '#d0d0d5' : '#3b3b4f');
     ctx.fillRect(x, y, barWidth, barH);
 
     // Year label beneath the bar
-    ctx.fillStyle    = '#dfdfe2';
+    ctx.fillStyle    = isLight ? '#0a0a23' : '#dfdfe2';
     ctx.font         = `${Math.min(11, Math.floor(barWidth * 0.7))}px 'Courier New', monospace`;
     ctx.textAlign    = 'center';
     ctx.textBaseline = 'top';
@@ -2715,7 +2716,29 @@ window.addEventListener('resize', () => {
    INIT: wire up all screens on DOMContentLoaded
 ============================================================ */
 
+function initThemeToggle() {
+  const saved = localStorage.getItem('theme');
+  if (saved === 'light') document.body.classList.add('light-mode');
+
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('.theme-toggle');
+    if (!btn) return;
+    const isLight = document.body.classList.toggle('light-mode');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    document.querySelectorAll('.theme-toggle').forEach(b => {
+      b.textContent = isLight ? '🌙' : '☀️';
+    });
+  });
+
+  if (saved === 'light') {
+    document.querySelectorAll('.theme-toggle').forEach(b => {
+      b.textContent = '🌙';
+    });
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  initThemeToggle();
   initStartScreen();
   initGameScreen();
   initResultScreen();
